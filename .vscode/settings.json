@@ -6,6 +6,7 @@
         }
     ],
     "conventionalCommits.scopes": [
-        "HL01"
+        "HL01",
+        "SL02a"
     ]
 }
