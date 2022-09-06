@@ -409,6 +409,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#thinking-logically" class="md-nav__link">
+    Thinking Logically
+  </a>
+  
+    <nav class="md-nav" aria-label="Thinking Logically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    Iteration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection" class="md-nav__link">
+    Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-algebra" class="md-nav__link">
+    Boolean algebra
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thinking-ahead" class="md-nav__link">
+    Thinking Ahead
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -497,6 +538,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#thinking-logically" class="md-nav__link">
+    Thinking Logically
+  </a>
+  
+    <nav class="md-nav" aria-label="Thinking Logically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    Iteration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection" class="md-nav__link">
+    Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-algebra" class="md-nav__link">
+    Boolean algebra
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thinking-ahead" class="md-nav__link">
+    Thinking Ahead
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -559,6 +641,39 @@ End sub
 Output prod
 </code></pre>
 <!-- markdownlint-enable -->
+
+<h2 id="thinking-logically">Thinking Logically<a class="headerlink" href="#thinking-logically" title="Permanent link">&para;</a></h2>
+<h3 id="iteration">Iteration<a class="headerlink" href="#iteration" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Counted loop: <code>FOR ... TO ... (STEP ...) NEXT</code></li>
+<li>Pre-condition loop: <code>WHILE ... DO ... ENDWHILE</code></li>
+<li>Post-condition loop: <code>REPEAT ... UNTIL</code></li>
+</ol>
+<h3 id="selection">Selection<a class="headerlink" href="#selection" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>IF ... THEN ... ENDIF</code></li>
+<li><code>IF ... THEN ... ELSE ... ENDIF</code></li>
+<li><code>IF ... THEN ... ELSE IF ... THEN ... ELSE ... ENDIF</code></li>
+<li><code>SWITCH ... CASE ... ELSE ... ENDSWITCH</code></li>
+</ol>
+<h3 id="boolean-algebra">Boolean algebra<a class="headerlink" href="#boolean-algebra" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>AND</code> (<code>&amp;&amp;</code>): <code>true</code> if both operands are <code>true</code></li>
+<li><code>OR</code> (<code>||</code>): <code>true</code> if either operand is <code>true</code></li>
+<li><code>NOT</code> (<code>!</code>): <code>true</code> if the operand is <code>false</code></li>
+<li><code>XOR</code> (<code>^</code>): <code>true</code> if one operand is <code>true</code> and the other is <code>false</code></li>
+<li><code>NAND</code> (<code>&amp;&amp;</code> then <code>!</code>): <code>true</code> if both operands are <code>false</code></li>
+<li><code>NOR</code> (<code>||</code> then <code>!</code>): <code>true</code> if both operands are <code>false</code></li>
+</ul>
+<h2 id="thinking-ahead">Thinking Ahead<a class="headerlink" href="#thinking-ahead" title="Permanent link">&para;</a></h2>
+<p>Pre-condition and post-condition comments are useful for documenting the purpose of a subroutine.</p>
+<div class="highlight"><pre><span></span><code>// Pre: A positive number x is passed to the function
+// Post: Calculates and returns the square root of x
+Sub function sqrt(x)
+    ans = x ^ 0.5
+    return ans
+End sub
+</code></pre></div>
 
 
 
