@@ -251,6 +251,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#file-handling" class="md-nav__link">
+    File handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#math" class="md-nav__link">
     Math
   </a>
@@ -268,6 +275,33 @@
           <li class="md-nav__item">
   <a href="#random" class="md-nav__link">
     Random
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arraylist" class="md-nav__link">
+    ArrayList
+  </a>
+  
+    <nav class="md-nav" aria-label="ArrayList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arraylist-methods" class="md-nav__link">
+    ArrayList methods
   </a>
   
 </li>
@@ -471,6 +505,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#file-handling" class="md-nav__link">
+    File handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#math" class="md-nav__link">
     Math
   </a>
@@ -488,6 +529,33 @@
           <li class="md-nav__item">
   <a href="#random" class="md-nav__link">
     Random
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arraylist" class="md-nav__link">
+    ArrayList
+  </a>
+  
+    <nav class="md-nav" aria-label="ArrayList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arraylist-methods" class="md-nav__link">
+    ArrayList methods
   </a>
   
 </li>
@@ -524,11 +592,11 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
-<p>To print with a newline:</p>
-<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>To print without a newline:</p>
-<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Print with newline</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Print without newline</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;World!\n&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
@@ -537,6 +605,40 @@
 <span class="c1">// in main</span><span class="w"></span>
 <span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"></span>
 <span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>Be careful: <code>nextInt()</code> does not read a newline character, so if <code>nextLine()</code> is used directly after, it will only read a newline character. See <a href="https://stackoverflow.com/a/13102066">this SO answer</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"></span>
+<span class="hll"><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"></span>
+</span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h2 id="file-handling">File handling<a class="headerlink" href="#file-handling" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// in main</span><span class="w"></span>
+<span class="c1">// Read from file</span><span class="w"></span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;filename.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">hasNextLine</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do something with line</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">FileNotFoundException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;An error occurred.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// Write to file</span><span class="w"></span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">FileWriter</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">&quot;filename.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Write with new line</span><span class="w"></span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">lineSeparator</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;An error occurred.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="math">Math<a class="headerlink" href="#math" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
@@ -548,7 +650,109 @@
 <span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h3 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// This gives a random number in the range of [min, max)</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+<h2 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h2>
+<p>See <a href="../HL/01/">HL01</a>.</p>
+<h2 id="arraylist">ArrayList<a class="headerlink" href="#arraylist" title="Permanent link">&para;</a></h2>
+<p>The equivalent of <code>vector</code> in C++ (a dynamic array).</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><code>ArrayList</code> <strong>cannot</strong> accept primitive types (e.g. <code>int</code>, <code>double</code>), so a class must be used instead (e.g. <code>Integer</code>, <code>Double</code>).</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// in main</span><span class="w"></span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+
+<span class="c1">// 2D ArrayList</span><span class="w"></span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// alternatively, use the diamond operator</span><span class="w"></span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="arraylist-methods">ArrayList methods<a class="headerlink" href="#arraylist-methods" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Add to end</span><span class="w"></span>
+<span class="n">arr</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Insert at index</span><span class="w"></span>
+<span class="n">arr</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Replace at index</span><span class="w"></span>
+<span class="n">arr</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Get element</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Remove element</span><span class="w"></span>
+<span class="n">arr</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">index</span><span class="p">);</span><span class="w"></span>
+<span class="n">arr</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Get size</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"></span>
+
+<span class="c1">// Clear</span><span class="w"></span>
+<span class="n">arr</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span><span class="w"></span>
+
+<span class="c1">// Check if empty</span><span class="w"></span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span><span class="w"></span>
+
+<span class="c1">// Check if contains element</span><span class="w"></span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Get index</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// To array</span><span class="w"></span>
+<span class="n">Integer</span><span class="o">[]</span><span class="w"> </span><span class="n">arr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Integer</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Collections methods</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// Sort</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Sort in reverse</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">reverseOrder</span><span class="p">());</span><span class="w"></span>
+<span class="c1">// Sort with custom comparator</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="c1">// Reverse</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Shuffle</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Swap</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Rotate</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">rotate</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">distance</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Fill</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Replace all</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">oldElement</span><span class="p">,</span><span class="w"> </span><span class="n">newElement</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Frequency</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">frequency</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Max</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Min</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Binary search</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Add all</span><span class="w"></span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">element1</span><span class="p">,</span><span class="w"> </span><span class="n">element2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
 
 
