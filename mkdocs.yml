@@ -9,7 +9,11 @@ markdown_extensions:
     - smarty
     - attr_list
     - pymdownx.details
-    - pymdownx.superfences
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
     - pymdownx.arithmatex:
           generic: true
 
