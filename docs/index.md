@@ -14,6 +14,6 @@
     - [05 Searching & Sorting Algorithms](SLHL/05.md)
 - [HL Only Units](HL)
     - [01 Problem-Solving & Data Structures 1](HL/01.md)
-    - [02 Control](HL/02.md)
+    - [02 Control Systems](HL/02.md)
     - [03 Abstract Data Structures](HL/03.md)
     - [04 Resource Management](HL/04.md)
