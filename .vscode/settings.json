@@ -8,6 +8,7 @@
     "conventionalCommits.scopes": [
         "SL01",
         "SL02a",
+        "SL03a",
         "HL01",
         "HL02",
         "Java"
