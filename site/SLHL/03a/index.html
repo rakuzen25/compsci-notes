@@ -1,716 +1,389 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-        <meta name="author" content="Frank Zhang">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
-    
-    
-      
-        <title>03a User Focus - CompSci Notes</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-      
-      
-    
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+<!DOCTYPE html>
 
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-  
-    
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#03a-user-focus" class="md-skip">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Frank Zhang" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.4.1" name="generator"/>
+<title>03a User Focus - CompSci Notes</title>
+<link href="../../assets/stylesheets/main.69437709.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#03a-user-focus">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CompSci Notes" class="md-header__button md-logo" aria-label="CompSci Notes" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="CompSci Notes" class="md-header__button md-logo" data-md-component="logo" href="../.." title="CompSci Notes">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             CompSci Notes
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               03a User Focus
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CompSci Notes" class="md-nav__button md-logo" aria-label="CompSci Notes" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="CompSci Notes" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="CompSci Notes">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
     CompSci Notes
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
         IB CompSci Notes
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../java/">
         Java Notes
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
           HL
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="HL" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           HL
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../HL/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/">
         HL Units Index
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../HL/01/" class="md-nav__link">
-        01 Problem-Solving & Data Structures 1
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/01/">
+        01 Problem-Solving &amp; Data Structures 1
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../HL/02/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/02/">
         02 Control Systems
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/03/">
+        03 Abstract Data Structures
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
           SLHL
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="SLHL" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="SLHL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
           SLHL
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
         SLHL Units Index
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01/">
         01 Computational Thinking
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02a/" class="md-nav__link">
-        02a Problem-Solving & Java (Main)
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02a/">
+        02a Problem-Solving &amp; Java (Main)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           03a User Focus
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         03a User Focus
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#end-user-documentation" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#end-user-documentation">
     End-user documentation
   </a>
-  
-    <nav class="md-nav" aria-label="End-user documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#importance-of-end-user-documentation" class="md-nav__link">
+<nav aria-label="End-user documentation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importance-of-end-user-documentation">
     Importance of end-user documentation
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#components-of-end-user-documentation" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components-of-end-user-documentation">
     Components of end-user documentation
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#types-of-end-user-documentation" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-end-user-documentation">
     Types of end-user documentation
   </a>
-  
-    <nav class="md-nav" aria-label="Types of end-user documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help-files" class="md-nav__link">
+<nav aria-label="Types of end-user documentation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#help-files">
     Help files
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#online-support" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#online-support">
     Online support
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#printed-manuals" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#printed-manuals">
     Printed manuals
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#technical-documentation" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technical-documentation">
     Technical documentation
   </a>
-  
-    <nav class="md-nav" aria-label="Technical documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#components-of-technical-documentation" class="md-nav__link">
+<nav aria-label="Technical documentation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components-of-technical-documentation">
     Components of technical documentation
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#user-training" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-training">
     User training
   </a>
-  
-    <nav class="md-nav" aria-label="User training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#types-of-user-training" class="md-nav__link">
+<nav aria-label="User training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-user-training">
     Types of user training
   </a>
-  
-    <nav class="md-nav" aria-label="Types of user training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#self-introduction" class="md-nav__link">
+<nav aria-label="Types of user training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#self-introduction">
     Self-introduction
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#formal-classes" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#formal-classes">
     Formal classes
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#remoteonline-training" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remoteonline-training">
     Remote/Online training
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03b/">
+        03b OS &amp; Applications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#end-user-documentation" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#end-user-documentation">
     End-user documentation
   </a>
-  
-    <nav class="md-nav" aria-label="End-user documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#importance-of-end-user-documentation" class="md-nav__link">
+<nav aria-label="End-user documentation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importance-of-end-user-documentation">
     Importance of end-user documentation
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#components-of-end-user-documentation" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components-of-end-user-documentation">
     Components of end-user documentation
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#types-of-end-user-documentation" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-end-user-documentation">
     Types of end-user documentation
   </a>
-  
-    <nav class="md-nav" aria-label="Types of end-user documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help-files" class="md-nav__link">
+<nav aria-label="Types of end-user documentation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#help-files">
     Help files
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#online-support" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#online-support">
     Online support
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#printed-manuals" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#printed-manuals">
     Printed manuals
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#technical-documentation" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technical-documentation">
     Technical documentation
   </a>
-  
-    <nav class="md-nav" aria-label="Technical documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#components-of-technical-documentation" class="md-nav__link">
+<nav aria-label="Technical documentation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#components-of-technical-documentation">
     Components of technical documentation
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#user-training" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-training">
     User training
   </a>
-  
-    <nav class="md-nav" aria-label="User training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#types-of-user-training" class="md-nav__link">
+<nav aria-label="User training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-user-training">
     Types of user training
   </a>
-  
-    <nav class="md-nav" aria-label="Types of user training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#self-introduction" class="md-nav__link">
+<nav aria-label="Types of user training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#self-introduction">
     Self-introduction
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#formal-classes" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#formal-classes">
     Formal classes
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#remoteonline-training" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remoteonline-training">
     Remote/Online training
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-
-
-<h1 id="03a-user-focus">03a User Focus<a class="headerlink" href="#03a-user-focus" title="Permanent link">&para;</a></h1>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="03a-user-focus">03a User Focus<a class="headerlink" href="#03a-user-focus" title="Permanent link">¶</a></h1>
 <p>User documentation is any document that explains how to use the features and functions of a system to its end-users.</p>
-<h2 id="end-user-documentation">End-user documentation<a class="headerlink" href="#end-user-documentation" title="Permanent link">&para;</a></h2>
+<h2 id="end-user-documentation">End-user documentation<a class="headerlink" href="#end-user-documentation" title="Permanent link">¶</a></h2>
 <p>End-user documentation refers to the documentation for a product or service provided to the end users. The end-user documentation is designed to assist end users to use the product or service. This is often referred to as user assistance. The end-user documentation is a part of the overall product delivered to the customer.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The end-user documentation <strong>does not</strong> involve detailed explanations of how the system works - the users only need to know how to use the system.</p>
 </div>
 <p>These guides need to be precise and easy to understand. In addition, well-written end-user documentation will help provide the best user experience. The quality of the user documentation can greatly affect the <strong>rate of implementation</strong> of (how fast users start using) the new system.</p>
-<h3 id="importance-of-end-user-documentation">Importance of end-user documentation<a class="headerlink" href="#importance-of-end-user-documentation" title="Permanent link">&para;</a></h3>
+<h3 id="importance-of-end-user-documentation">Importance of end-user documentation<a class="headerlink" href="#importance-of-end-user-documentation" title="Permanent link">¶</a></h3>
 <p>Users can learn:</p>
 <ol>
 <li>how to use your software</li>
@@ -722,7 +395,7 @@
 <strong>unaware</strong> of particular features or <strong>unable to use</strong> features that
 are not immediately obvious.</p>
 <p>A well-made user documentation guides the user through using the system and thus <strong>increases productivity</strong>. If the user documentation is simple, system implementation can happen faster because users require less training to learn how to use the new system.</p>
-<h3 id="components-of-end-user-documentation">Components of end-user documentation<a class="headerlink" href="#components-of-end-user-documentation" title="Permanent link">&para;</a></h3>
+<h3 id="components-of-end-user-documentation">Components of end-user documentation<a class="headerlink" href="#components-of-end-user-documentation" title="Permanent link">¶</a></h3>
 <p>Users expect the end-user documentation to include:</p>
 <ul>
 <li>FAQs</li>
@@ -741,8 +414,8 @@ are not immediately obvious.</p>
 <li>Explanations of error messages and troubleshooting guides</li>
 <li>Information to contact the developer of the system if an undocumented question arises</li>
 </ul>
-<h3 id="types-of-end-user-documentation">Types of end-user documentation<a class="headerlink" href="#types-of-end-user-documentation" title="Permanent link">&para;</a></h3>
-<h4 id="help-files">Help files<a class="headerlink" href="#help-files" title="Permanent link">&para;</a></h4>
+<h3 id="types-of-end-user-documentation">Types of end-user documentation<a class="headerlink" href="#types-of-end-user-documentation" title="Permanent link">¶</a></h3>
+<h4 id="help-files">Help files<a class="headerlink" href="#help-files" title="Permanent link">¶</a></h4>
 <p>Files supplied together with the system. They can usually be called up with a button in the system.</p>
 <ul>
 <li>Advantages<ul>
@@ -753,7 +426,7 @@ are not immediately obvious.</p>
 </ul>
 </li>
 <li>Disadvantages<ul>
-<li>Can only be used after the system has been installed (can&rsquo;t give any help when installing the solution)</li>
+<li>Can only be used after the system has been installed (can’t give any help when installing the solution)</li>
 <li>Might not be detailed (often only deal with very general errors)</li>
 <li>Might be hard to find (lack a search capability)<ul>
 <li>(Even with search) the user might not know what to search for</li>
@@ -762,8 +435,8 @@ are not immediately obvious.</p>
 </ul>
 </li>
 </ul>
-<h4 id="online-support">Online support<a class="headerlink" href="#online-support" title="Permanent link">&para;</a></h4>
-<p>Special web service hosted by the system&rsquo;s developer to provide user
+<h4 id="online-support">Online support<a class="headerlink" href="#online-support" title="Permanent link">¶</a></h4>
+<p>Special web service hosted by the system’s developer to provide user
 documentation.</p>
 <ul>
 <li>Advantages<ul>
@@ -776,12 +449,12 @@ documentation.</p>
 </ul>
 </li>
 <li>Disadvantages<ul>
-<li>Can&rsquo;t be accessed offline/with a slow internet connection</li>
+<li>Can’t be accessed offline/with a slow internet connection</li>
 <li>Live support does not work quite well with users unfamiliar with computers when they have to explain their problem</li>
 </ul>
 </li>
 </ul>
-<h4 id="printed-manuals">Printed manuals<a class="headerlink" href="#printed-manuals" title="Permanent link">&para;</a></h4>
+<h4 id="printed-manuals">Printed manuals<a class="headerlink" href="#printed-manuals" title="Permanent link">¶</a></h4>
 <p>Manuals printed on paper and supplied together with the
 system.</p>
 <ul>
@@ -802,21 +475,21 @@ system.</p>
 </ul>
 </li>
 </ul>
-<h2 id="technical-documentation">Technical documentation<a class="headerlink" href="#technical-documentation" title="Permanent link">&para;</a></h2>
-<p>Technical documentation addresses the system administrator&rsquo;s needs. Usually, this document contains information that will help in product maintenance, such as installation and updates.</p>
+<h2 id="technical-documentation">Technical documentation<a class="headerlink" href="#technical-documentation" title="Permanent link">¶</a></h2>
+<p>Technical documentation addresses the system administrator’s needs. Usually, this document contains information that will help in product maintenance, such as installation and updates.</p>
 <p>Technical documentation refers to the documentation that describes how a product or service operates. For example, software code documentation, technical specifications and API documentation. Technical documentation can also describe how to install the software.</p>
-<h3 id="components-of-technical-documentation">Components of technical documentation<a class="headerlink" href="#components-of-technical-documentation" title="Permanent link">&para;</a></h3>
+<h3 id="components-of-technical-documentation">Components of technical documentation<a class="headerlink" href="#components-of-technical-documentation" title="Permanent link">¶</a></h3>
 <ul>
 <li>Descriptions of functions</li>
 <li>System admin guide</li>
 </ul>
-<h2 id="user-training">User training<a class="headerlink" href="#user-training" title="Permanent link">&para;</a></h2>
+<h2 id="user-training">User training<a class="headerlink" href="#user-training" title="Permanent link">¶</a></h2>
 <p>Training end-users in using a new system is very important
 as productivity greatly depends on how familiar they are with
 a system. Effective user training is an essential part of introducing a
 new system.</p>
-<h3 id="types-of-user-training">Types of user training<a class="headerlink" href="#types-of-user-training" title="Permanent link">&para;</a></h3>
-<h4 id="self-introduction">Self-introduction<a class="headerlink" href="#self-introduction" title="Permanent link">&para;</a></h4>
+<h3 id="types-of-user-training">Types of user training<a class="headerlink" href="#types-of-user-training" title="Permanent link">¶</a></h3>
+<h4 id="self-introduction">Self-introduction<a class="headerlink" href="#self-introduction" title="Permanent link">¶</a></h4>
 <p>Users can learn how to use a new system <strong>on their own</strong>, provided they have the right material to learn from. It can take the form of reading a manual or watching a tutorial.</p>
 <ul>
 <li>Advantages<ul>
@@ -831,7 +504,7 @@ new system.</p>
 </ul>
 </li>
 </ul>
-<h4 id="formal-classes">Formal classes<a class="headerlink" href="#formal-classes" title="Permanent link">&para;</a></h4>
+<h4 id="formal-classes">Formal classes<a class="headerlink" href="#formal-classes" title="Permanent link">¶</a></h4>
 <p>Users sit in a classroom and listen to an instructor who
 shows and explains how to use the system. This type of training is useful to train large amounts of staff as it is effective and relatively cheap, but if the size of the classes is too big, there is little time to deal with individual problems and questions.</p>
 <ul>
@@ -848,8 +521,8 @@ shows and explains how to use the system. This type of training is useful to tra
 </ul>
 </li>
 </ul>
-<h4 id="remoteonline-training">Remote/Online training<a class="headerlink" href="#remoteonline-training" title="Permanent link">&para;</a></h4>
-<p>An instructor training one user or a small group of users by some kind of remote connection (Skype, Google Meet, Zoom, etc). This is the most effective way of training as training can be suited to users&rsquo; needs and abilities while being instructed by a professional that caters to specific needs.</p>
+<h4 id="remoteonline-training">Remote/Online training<a class="headerlink" href="#remoteonline-training" title="Permanent link">¶</a></h4>
+<p>An instructor training one user or a small group of users by some kind of remote connection (Skype, Google Meet, Zoom, etc). This is the most effective way of training as training can be suited to users’ needs and abilities while being instructed by a professional that caters to specific needs.</p>
 <ul>
 <li>Advantages<ul>
 <li>Structured learning environment</li>
@@ -860,78 +533,65 @@ shows and explains how to use the system. This type of training is useful to tra
 </li>
 <li>Disadvantages<ul>
 <li>Expensive (teachers &amp; internet connection needed)</li>
-<li>Can feel &lsquo;remote&rsquo; with no quick &lsquo;hands-on&rsquo;</li>
+<li>Can feel ‘remote’ with no quick ‘hands-on’</li>
 <li>Has to be computer-based</li>
 </ul>
 </li>
 </ul>
-
-
-
-
-              
-            </article>
-            
-          </div>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../02a/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02a Problem-Solving &amp; Java (Main)" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 02a Problem-Solving &amp; Java (Main)" class="md-footer__link md-footer__link--prev" href="../02a/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Previous
               </span>
-              02a Problem-Solving & Java (Main)
+              02a Problem-Solving &amp; Java (Main)
             </div>
-          </div>
-        </a>
-      
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+</div>
+</a>
+<a aria-label="Next: 03b OS &amp; Applications" class="md-footer__link md-footer__link--next" href="../03b/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              03b OS &amp; Applications
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
-      
-        <script src="../../js/mathjax.min.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+<script src="../../js/mathjax.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

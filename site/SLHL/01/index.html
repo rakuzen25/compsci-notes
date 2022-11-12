@@ -1,653 +1,342 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-        <meta name="author" content="Frank Zhang">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
-    
-    
-      
-        <title>01 Computational Thinking - CompSci Notes</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-      
-      
-    
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+<!DOCTYPE html>
 
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-  
-    
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#01-computational-thinking" class="md-skip">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Frank Zhang" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.4.1" name="generator"/>
+<title>01 Computational Thinking - CompSci Notes</title>
+<link href="../../assets/stylesheets/main.69437709.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#01-computational-thinking">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CompSci Notes" class="md-header__button md-logo" aria-label="CompSci Notes" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="CompSci Notes" class="md-header__button md-logo" data-md-component="logo" href="../.." title="CompSci Notes">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             CompSci Notes
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               01 Computational Thinking
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CompSci Notes" class="md-nav__button md-logo" aria-label="CompSci Notes" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="CompSci Notes" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="CompSci Notes">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
     CompSci Notes
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
         IB CompSci Notes
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../java/">
         Java Notes
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
           HL
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="HL" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="HL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           HL
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../HL/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/">
         HL Units Index
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../HL/01/" class="md-nav__link">
-        01 Problem-Solving & Data Structures 1
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/01/">
+        01 Problem-Solving &amp; Data Structures 1
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../HL/02/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/02/">
         02 Control Systems
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../HL/03/">
+        03 Abstract Data Structures
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
           SLHL
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="SLHL" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="SLHL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
           SLHL
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
         SLHL Units Index
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           01 Computational Thinking
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         01 Computational Thinking
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#decomposition" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decomposition">
     Decomposition
   </a>
-  
-    <nav class="md-nav" aria-label="Decomposition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decomposition-benefits" class="md-nav__link">
+<nav aria-label="Decomposition" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decomposition-benefits">
     Benefits
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#decomposition-examples" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decomposition-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-recognition" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pattern-recognition">
     Pattern Recognition
   </a>
-  
-    <nav class="md-nav" aria-label="Pattern Recognition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pattern-recognition-benefits" class="md-nav__link">
+<nav aria-label="Pattern Recognition" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pattern-recognition-benefits">
     Benefits
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-recognition-examples" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pattern-recognition-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#abstraction" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstraction">
     Abstraction
   </a>
-  
-    <nav class="md-nav" aria-label="Abstraction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#abstraction-benefits" class="md-nav__link">
+<nav aria-label="Abstraction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstraction-benefits">
     Benefits
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#abstraction-examples" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstraction-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-design" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algorithm-design">
     Algorithm Design
   </a>
-  
-    <nav class="md-nav" aria-label="Algorithm Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#algorithm-design-examples" class="md-nav__link">
+<nav aria-label="Algorithm Design" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algorithm-design-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02a/" class="md-nav__link">
-        02a Problem-Solving & Java (Main)
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02a/">
+        02a Problem-Solving &amp; Java (Main)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03a/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03a/">
         03a User Focus
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03b/">
+        03b OS &amp; Applications
+      </a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#decomposition" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decomposition">
     Decomposition
   </a>
-  
-    <nav class="md-nav" aria-label="Decomposition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decomposition-benefits" class="md-nav__link">
+<nav aria-label="Decomposition" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decomposition-benefits">
     Benefits
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#decomposition-examples" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decomposition-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-recognition" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pattern-recognition">
     Pattern Recognition
   </a>
-  
-    <nav class="md-nav" aria-label="Pattern Recognition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pattern-recognition-benefits" class="md-nav__link">
+<nav aria-label="Pattern Recognition" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pattern-recognition-benefits">
     Benefits
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-recognition-examples" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pattern-recognition-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#abstraction" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstraction">
     Abstraction
   </a>
-  
-    <nav class="md-nav" aria-label="Abstraction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#abstraction-benefits" class="md-nav__link">
+<nav aria-label="Abstraction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstraction-benefits">
     Benefits
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#abstraction-examples" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abstraction-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-design" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algorithm-design">
     Algorithm Design
   </a>
-  
-    <nav class="md-nav" aria-label="Algorithm Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#algorithm-design-examples" class="md-nav__link">
+<nav aria-label="Algorithm Design" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#algorithm-design-examples">
     Examples
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-
-
-<h1 id="01-computational-thinking">01 Computational Thinking<a class="headerlink" href="#01-computational-thinking" title="Permanent link">&para;</a></h1>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="01-computational-thinking">01 Computational Thinking<a class="headerlink" href="#01-computational-thinking" title="Permanent link">¶</a></h1>
 <div class="admonition summary">
 <p class="admonition-title">Summary</p>
 <ol>
@@ -657,13 +346,13 @@
 <li><a href="#algorithm-design">Algorithm Design</a>: solve parallel &amp; sequential subproblems</li>
 </ol>
 </div>
-<h2 id="decomposition">Decomposition<a class="headerlink" href="#decomposition" title="Permanent link">&para;</a></h2>
+<h2 id="decomposition">Decomposition<a class="headerlink" href="#decomposition" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Breaking down</strong> a complex problem/system -&gt; smaller, more manageable, easier–to-understand parts</li>
 <li>Then examine/solve/design individually</li>
-<li>&ldquo;Divide and conquer&rdquo;</li>
+<li>“Divide and conquer”</li>
 </ul>
-<h3 id="decomposition-benefits">Benefits<a class="headerlink" href="#decomposition-benefits" title="Permanent link">&para;</a></h3>
+<h3 id="decomposition-benefits">Benefits<a class="headerlink" href="#decomposition-benefits" title="Permanent link">¶</a></h3>
 <ul>
 <li>Simpler to work with, easier to solve<ul>
 <li>Deal with one at a time only</li>
@@ -676,8 +365,8 @@
 </li>
 <li>Components can be reused in other programs</li>
 </ul>
-<h3 id="decomposition-examples">Examples<a class="headerlink" href="#decomposition-examples" title="Permanent link">&para;</a></h3>
-<p><img alt="Decomposition example" src="https://i.imgur.com/3aWJqDU.jpg" /></p>
+<h3 id="decomposition-examples">Examples<a class="headerlink" href="#decomposition-examples" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/3aWJqDU.jpg"><img alt="Decomposition example" src="https://i.imgur.com/3aWJqDU.jpg"/></a></p>
 <ul>
 <li>Brushing teeth<ul>
 <li>which toothbrush to use</li>
@@ -708,11 +397,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="pattern-recognition">Pattern Recognition<a class="headerlink" href="#pattern-recognition" title="Permanent link">&para;</a></h2>
+<h2 id="pattern-recognition">Pattern Recognition<a class="headerlink" href="#pattern-recognition" title="Permanent link">¶</a></h2>
 <ul>
 <li>Finding <strong>patterns</strong> (similarity/common characteristics) among small, decomposed problems</li>
 </ul>
-<h3 id="pattern-recognition-benefits">Benefits<a class="headerlink" href="#pattern-recognition-benefits" title="Permanent link">&para;</a></h3>
+<h3 id="pattern-recognition-benefits">Benefits<a class="headerlink" href="#pattern-recognition-benefits" title="Permanent link">¶</a></h3>
 <ul>
 <li>Use the same problem-solving solution for the same pattern<ul>
 <li>Easier &amp; quicker</li>
@@ -721,10 +410,10 @@
 </li>
 <li>Solve the problem correctly (because generalisations have been identified)</li>
 </ul>
-<h3 id="pattern-recognition-examples">Examples<a class="headerlink" href="#pattern-recognition-examples" title="Permanent link">&para;</a></h3>
-<p><img alt="Patterns in cake" src="https://i.imgur.com/uXjTsMb.png" /></p>
+<h3 id="pattern-recognition-examples">Examples<a class="headerlink" href="#pattern-recognition-examples" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/uXjTsMb.png"><img alt="Patterns in cake" src="https://i.imgur.com/uXjTsMb.png"/></a></p>
 <p>There might even be patterns within a problem, e.g. for each ingredient, we need its name and a specific measurement.</p>
-<h2 id="abstraction">Abstraction<a class="headerlink" href="#abstraction" title="Permanent link">&para;</a></h2>
+<h2 id="abstraction">Abstraction<a class="headerlink" href="#abstraction" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Filtering out/ignoring/taking away</strong> unnecessary characteristics/details to concentrate on <strong>necessary/essential</strong> ones</li>
 <li>Creating a <strong>model</strong> (an easier-to-understand version/general idea of a complex system)</li>
@@ -734,7 +423,7 @@
 <p>A single abstraction can represent a whole class of similar things (e.g. for any bus route, we need the bus number, start/end time and bus stops to get on/off).</p>
 </div>
 <p>This can be done through successive <a href="#decomposition">decomposition</a> and by keeping <strong>general patterns</strong> and removing <strong>specific details</strong>.</p>
-<h3 id="abstraction-benefits">Benefits<a class="headerlink" href="#abstraction-benefits" title="Permanent link">&para;</a></h3>
+<h3 id="abstraction-benefits">Benefits<a class="headerlink" href="#abstraction-benefits" title="Permanent link">¶</a></h3>
 <ul>
 <li>Can be viewed both as a process and as an entity (???)</li>
 <li>Enables concentration on essential aspects -&gt; ignore distracting details<ul>
@@ -743,14 +432,14 @@
 </li>
 <li>Technique for managing <strong>complexity</strong></li>
 </ul>
-<h3 id="abstraction-examples">Examples<a class="headerlink" href="#abstraction-examples" title="Permanent link">&para;</a></h3>
-<p><img alt="Abstract-o-meter" src="https://i.imgur.com/jXeQGJg.png" /></p>
+<h3 id="abstraction-examples">Examples<a class="headerlink" href="#abstraction-examples" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/jXeQGJg.png"><img alt="Abstract-o-meter" src="https://i.imgur.com/jXeQGJg.png"/></a></p>
 <p>An MRT map is an abstraction of the geographically accurate map, but it contains enough information for us to navigate the MRT system.</p>
-<p><img alt="Tube map" src="https://i.imgur.com/S7NoSyE.png" />
-<img alt="Geographically accurate Tube map" src="https://i.imgur.com/KiOMrfR.jpg" /></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/S7NoSyE.png"><img alt="Tube map" src="https://i.imgur.com/S7NoSyE.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/KiOMrfR.jpg"><img alt="Geographically accurate Tube map" src="https://i.imgur.com/KiOMrfR.jpg"/></a></p>
 <p>In computer programming this can be:</p>
-<p><img alt="Level of abstraction" src="https://i.imgur.com/OZBbACr.jpg" /></p>
-<h2 id="algorithm-design">Algorithm Design<a class="headerlink" href="#algorithm-design" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/OZBbACr.jpg"><img alt="Level of abstraction" src="https://i.imgur.com/OZBbACr.jpg"/></a></p>
+<h2 id="algorithm-design">Algorithm Design<a class="headerlink" href="#algorithm-design" title="Permanent link">¶</a></h2>
 <ul>
 <li>A <strong>plan</strong> or a set of <strong>step-by-step instructions</strong> to solve a problem<ul>
 <li>Each instruction is identified</li>
@@ -760,102 +449,74 @@
 <li>A starting point for computer programs</li>
 <li>Represented using <strong>pseudocode</strong> or <strong>flowchart</strong></li>
 </ul>
-<h3 id="algorithm-design-examples">Examples<a class="headerlink" href="#algorithm-design-examples" title="Permanent link">&para;</a></h3>
+<h3 id="algorithm-design-examples">Examples<a class="headerlink" href="#algorithm-design-examples" title="Permanent link">¶</a></h3>
 <p>In GCSE-style pseudocode:</p>
-<div class="highlight"><pre><span></span><code>OUTPUT &quot;What is your name?&quot;
+<div class="highlight"><pre><span></span><code>OUTPUT "What is your name?"
 INPUT name
-OUTPUT &quot;Hello&quot;, name
-OUTPUT &quot;How old are you?&quot;
+OUTPUT "Hello", name
+OUTPUT "How old are you?"
 INPUT age
 IF age &gt;= 70 THEN
-    OUTPUT &quot;You are aged to perfection!&quot;
+    OUTPUT "You are aged to perfection!"
 ELSE
-    OUTPUT &quot;You are a spring chicken!&quot;
+    OUTPUT "You are a spring chicken!"
 </code></pre></div>
 <p>In flowchart:</p>
-<p><img alt="Algorithm" src="https://i.imgur.com/2fH0goR.png" /></p>
-
-
-
-
-              
-            </article>
-            
-          </div>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: SLHL Units Index" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://i.imgur.com/2fH0goR.png"><img alt="Algorithm" src="https://i.imgur.com/2fH0goR.png"/></a></p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: SLHL Units Index" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Previous
               </span>
               SLHL Units Index
             </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../02a/" class="md-footer__link md-footer__link--next" aria-label="Next: 02a Problem-Solving &amp; Java (Main)" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</div>
+</a>
+<a aria-label="Next: 02a Problem-Solving &amp; Java (Main)" class="md-footer__link md-footer__link--next" href="../02a/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Next
               </span>
-              02a Problem-Solving & Java (Main)
+              02a Problem-Solving &amp; Java (Main)
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
-      
-        <script src="../../js/mathjax.min.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+<script src="../../js/mathjax.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
