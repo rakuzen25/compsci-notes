@@ -7,24 +7,28 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Frank Zhang" name="author"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.4.1" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
 <title>03a User Focus - CompSci Notes</title>
-<link href="../../assets/stylesheets/main.69437709.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -59,6 +63,16 @@
 </div>
 </div>
 </div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
 </nav>
 </header>
 <div class="md-container" data-md-component="container">
@@ -380,12 +394,20 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="03a-user-focus">03a User Focus<a class="headerlink" href="#03a-user-focus" title="Permanent link">¶</a></h1>
-<p>User documentation is any document that explains how to use the features and functions of a system to its end-users.</p>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>1.1.8 Describe the importance of user documentation</li>
+<li>1.1.9 Evaluate different methods of providing user documentation</li>
+<li>1.1.10 Evaluate different methods of delivering user training</li>
+</ul>
+</div>
+<p>User documentation is any document that explains how to use the <strong>features and functions</strong> of a system.</p>
 <h2 id="end-user-documentation">End-user documentation<a class="headerlink" href="#end-user-documentation" title="Permanent link">¶</a></h2>
-<p>End-user documentation refers to the documentation for a product or service provided to the end users. The end-user documentation is designed to assist end users to use the product or service. This is often referred to as user assistance. The end-user documentation is a part of the overall product delivered to the customer.</p>
+<p>End-user documentation refers to the documentation for a product or service provided to the <strong>end users</strong>. The end-user documentation is designed to assist end users to use the product or service. This is often referred to as <strong>user assistance</strong>. The end-user documentation is <strong>a part of the overall product</strong> delivered to the customer.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>The end-user documentation <strong>does not</strong> involve detailed explanations of how the system works - the users only need to know how to use the system.</p>
+<p>The end-user documentation <strong>does not</strong> involve detailed explanations of how the system works - the users only need to know <strong>how to use</strong> the system.</p>
 </div>
 <p>These guides need to be precise and easy to understand. In addition, well-written end-user documentation will help provide the best user experience. The quality of the user documentation can greatly affect the <strong>rate of implementation</strong> of (how fast users start using) the new system.</p>
 <h3 id="importance-of-end-user-documentation">Importance of end-user documentation<a class="headerlink" href="#importance-of-end-user-documentation" title="Permanent link">¶</a></h3>
@@ -481,8 +503,8 @@ system.</p>
 </li>
 </ul>
 <h2 id="technical-documentation">Technical documentation<a class="headerlink" href="#technical-documentation" title="Permanent link">¶</a></h2>
-<p>Technical documentation addresses the system administrator’s needs. Usually, this document contains information that will help in product maintenance, such as installation and updates.</p>
-<p>Technical documentation refers to the documentation that describes how a product or service operates. For example, software code documentation, technical specifications and API documentation. Technical documentation can also describe how to install the software.</p>
+<p>Technical documentation addresses the <strong>system administrator’s needs</strong>. Usually, this document contains information that will help in <strong>product maintenance</strong>, such as installation and updates.</p>
+<p>Technical documentation refers to the documentation that describes how a product or service <strong>operates</strong>. For example, software code documentation, technical specifications and API documentation. Technical documentation can also describe how to <strong>install</strong> the software.</p>
 <h3 id="components-of-technical-documentation">Components of technical documentation<a class="headerlink" href="#components-of-technical-documentation" title="Permanent link">¶</a></h3>
 <ul>
 <li>Descriptions of functions</li>
@@ -490,7 +512,7 @@ system.</p>
 </ul>
 <h2 id="user-training">User training<a class="headerlink" href="#user-training" title="Permanent link">¶</a></h2>
 <p>Training end-users in using a new system is very important
-as productivity greatly depends on how familiar they are with
+as <strong>productivity</strong> greatly depends on how familiar they are with
 a system. Effective user training is an essential part of introducing a
 new system.</p>
 <h3 id="types-of-user-training">Types of user training<a class="headerlink" href="#types-of-user-training" title="Permanent link">¶</a></h3>
@@ -498,48 +520,47 @@ new system.</p>
 <p>Users can learn how to use a new system <strong>on their own</strong>, provided they have the right material to learn from. It can take the form of reading a manual or watching a tutorial.</p>
 <ul>
 <li>Advantages<ul>
-<li>Low cost (only materials needed, no teachers/buildings)</li>
-<li>Flexible timeline</li>
-<li>Training tailored to exactly what users want to learn</li>
+<li>Low <strong>cost</strong> (only materials needed, no teachers/buildings)</li>
+<li><strong>Flexible</strong> timeline</li>
+<li>Training <strong>tailored</strong> to exactly what users want to learn</li>
 </ul>
 </li>
 <li>Disadvantages<ul>
-<li>With no guidance, users might feel lost/overwhelmed</li>
-<li>Unstructured learning means certain features might be misunderstood/ignored</li>
+<li>With no guidance, users might feel <strong>lost/overwhelmed</strong></li>
+<li>Unstructured learning means certain features might be <strong>misunderstood/ignored</strong></li>
 </ul>
 </li>
 </ul>
 <h4 id="formal-classes">Formal classes<a class="headerlink" href="#formal-classes" title="Permanent link">¶</a></h4>
-<p>Users sit in a classroom and listen to an instructor who
-shows and explains how to use the system. This type of training is useful to train large amounts of staff as it is effective and relatively cheap, but if the size of the classes is too big, there is little time to deal with individual problems and questions.</p>
+<p>Users sit in a <strong>classroom</strong> and listen to an <strong>instructor</strong> who <strong>shows and explains</strong> how to use the system. This type of training is useful to train large amounts of staff as it is <strong>effective</strong> and relatively <strong>cheap</strong>, but if the size of the classes is <strong>too big</strong>, there is little time to deal with <strong>individual problems and questions</strong>.</p>
 <ul>
 <li>Advantages<ul>
-<li>Structured learning environment</li>
-<li>Expert on hand to answer questions</li>
-<li>Curriculum designed to teach all aspects, including ones that might be misunderstood or difficult to grasp</li>
+<li><strong>Structured</strong> learning environment</li>
+<li><strong>Expert</strong> on hand to answer questions</li>
+<li>Curriculum designed to teach <strong>all aspects</strong>, including ones that might be misunderstood or difficult to grasp</li>
 </ul>
 </li>
 <li>Disadvantages<ul>
-<li>Expensive (teachers, buildings and facilities needed)</li>
-<li>Rigid schedule and curriculum</li>
-<li>Not much personalisation is possible</li>
+<li><strong>Expensive</strong> (teachers, buildings and facilities needed)</li>
+<li><strong>Rigid</strong> schedule and curriculum</li>
+<li>Not much <strong>personalisation</strong> is possible</li>
 </ul>
 </li>
 </ul>
 <h4 id="remoteonline-training">Remote/Online training<a class="headerlink" href="#remoteonline-training" title="Permanent link">¶</a></h4>
-<p>An instructor training one user or a small group of users by some kind of remote connection (Skype, Google Meet, Zoom, etc). This is the most effective way of training as training can be suited to users’ needs and abilities while being instructed by a professional that caters to specific needs.</p>
+<p>An <strong>instructor</strong> training one user or a small group of users by some kind of <strong>remote connection</strong> (Skype, Google Meet, Zoom, etc). This is the <strong>most effective</strong> way of training as training can be <strong>suited</strong> to users’ needs and abilities while being instructed by a <strong>professional</strong> that caters to <strong>specific needs</strong>.</p>
 <ul>
 <li>Advantages<ul>
-<li>Structured learning environment</li>
-<li>Expert on hand to answer questions</li>
-<li>Curriculum designed to teach all aspects, including ones that might be misunderstood or difficult to grasp</li>
-<li>Flexible locations</li>
+<li><strong>Structured</strong> learning environment</li>
+<li><strong>Expert</strong> on hand to answer questions</li>
+<li>Curriculum designed to teach <strong>all aspects</strong>, including ones that might be misunderstood or difficult to grasp</li>
+<li><strong>Flexible</strong> locations</li>
 </ul>
 </li>
 <li>Disadvantages<ul>
-<li>Expensive (teachers &amp; internet connection needed)</li>
-<li>Can feel ‘remote’ with no quick ‘hands-on’</li>
-<li>Has to be computer-based</li>
+<li><strong>Expensive</strong> (teachers &amp; internet connection needed)</li>
+<li>Can feel “<strong>remote</strong>” with no quick “hands-on’</li>
+<li>Has to be <strong>computer-based</strong></li>
 </ul>
 </li>
 </ul>
@@ -593,10 +614,10 @@ shows and explains how to use the system. This type of training is useful to tra
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
 <script src="../../js/mathjax.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
