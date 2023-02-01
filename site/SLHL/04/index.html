@@ -8,7 +8,7 @@
 <meta content="Frank Zhang" name="author"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>03c Number Systems &amp; Data Representation - CompSci Notes</title>
+<title>04 OOP Intro + Java - CompSci Notes</title>
 <link href="../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#03c-number-systems-data-representation">
+<a class="md-skip" href="#04-oop-intro-java">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              03c Number Systems &amp; Data Representation
+              04 OOP Intro + Java
             
           </span>
 </div>
@@ -171,14 +171,19 @@
         03b OS &amp; Applications
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03c/">
+        03c Number Systems &amp; Data Representation
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          03c Number Systems &amp; Data Representation
+          04 OOP Intro + Java
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        03c Number Systems &amp; Data Representation
+        04 OOP Intro + Java
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -187,46 +192,12 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#applications-of-number-systems">
-    Applications of Number Systems
-  </a>
-<nav aria-label="Applications of Number Systems" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#machine-code">
-    Machine code
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assembly-language">
-    Assembly language
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#media-access-control-mac-addresses">
-    Media Access Control (MAC addresses)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#html-colours">
-    HTML colours
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#registers-and-values">
-    Registers and values
+<a class="md-nav__link" href="#concept-of-an-object-java">
+    Concept of an Object &amp; Java
   </a>
 </li>
 </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../04/">
-        04 OOP Intro + Java
-      </a>
 </li>
 </ul>
 </nav>
@@ -246,38 +217,9 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#applications-of-number-systems">
-    Applications of Number Systems
+<a class="md-nav__link" href="#concept-of-an-object-java">
+    Concept of an Object &amp; Java
   </a>
-<nav aria-label="Applications of Number Systems" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#machine-code">
-    Machine code
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assembly-language">
-    Assembly language
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#media-access-control-mac-addresses">
-    Media Access Control (MAC addresses)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#html-colours">
-    HTML colours
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#registers-and-values">
-    Registers and values
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -286,63 +228,108 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="03c-number-systems-data-representation">03c Number Systems &amp; Data Representation<a class="headerlink" href="#03c-number-systems-data-representation" title="Permanent link">¶</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Syllabus points</p>
+<h1 id="04-oop-intro-java">04 OOP Intro + Java<a class="headerlink" href="#04-oop-intro-java" title="Permanent link">¶</a></h1>
+<h2 id="concept-of-an-object-java">Concept of an Object &amp; Java<a class="headerlink" href="#concept-of-an-object-java" title="Permanent link">¶</a></h2>
 <ul>
-<li>2.1.9 Define the terms: bit, byte, binary, denary/decimal, hexadecimal</li>
-<li>2.1.10 Outline the way in which data is represented in the computer</li>
-</ul>
-</div>
-<h2 id="applications-of-number-systems">Applications of Number Systems<a class="headerlink" href="#applications-of-number-systems" title="Permanent link">¶</a></h2>
-<p>Hexadecimal: easier to convert <strong>to and from binary</strong> than decimal and easier to work with than binary in terms of <strong>remembering, accuracy and checking</strong>.</p>
-<h3 id="machine-code">Machine code<a class="headerlink" href="#machine-code" title="Permanent link">¶</a></h3>
-<ul>
-<li>Consists of only 1s and 0s (binary)</li>
-<li>Different for different groups of processors</li>
-<li>Sometimes able to enter the hexadecimal equivalent - faster and more accurate</li>
-</ul>
-<h3 id="assembly-language">Assembly language<a class="headerlink" href="#assembly-language" title="Permanent link">¶</a></h3>
-<ul>
-<li>Same structure as machine code</li>
-<li>Mnemonics instead of binary numbers</li>
-<li>1-1 machine code conversion</li>
-</ul>
-<h3 id="media-access-control-mac-addresses">Media Access Control (MAC addresses)<a class="headerlink" href="#media-access-control-mac-addresses" title="Permanent link">¶</a></h3>
-<ul>
-<li>The physical address of a Network Interface Card (NIC)</li>
-<li>Used to uniquely identify a computer when connecting to a network</li>
-<li>Put on to the NIC by the manufacturer when the device is made<ul>
-<li>Cannot be changed</li>
-<li>Different to an IP address (given to a device on a network by the network itself and can change)</li>
-</ul>
-</li>
-<li>6 groups of 2 hexadecimal digits (e.g. <code>00:3E:E1:C4:5D:DF</code>)<ul>
-<li>2 hex digits/byte → 6 bytes/address</li>
+<li>Class: a blueprint for an object</li>
+<li>Object: a specific instance of a class</li>
+<li>Attributes: variables that describe the states of the object</li>
+<li>Methods: functions that describe the behaviours of the object</li>
+<li>Class-level attributes/methods: attributes/methods that are shared by all objects of the class</li>
+<li>Constructor: a special method that is called when an object is created</li>
+<li>Accessor/getter: a method that returns the value of an attribute</li>
+<li>Mutator/setter: a method that sets the value of an attribute</li>
+<li>Parameter: a variable that is used in a method definition</li>
+<li>Signature: the name and parameter types of a method</li>
+<li>Overloading: defining multiple methods with the same name but different signatures</li>
+<li>Access levels<ul>
+<li><code>public</code>: accessible from anywhere</li>
+<li><code>private</code>: only accessible from within the class</li>
 </ul>
 </li>
 </ul>
-<p>Hex MAC address &gt; decimal because</p>
-<ul>
-<li>Converts to the binary equivalent digit-by-digit (no need to do the whole number at once)</li>
-<li>12 digits can store <span class="arithmatex">\(2^48 = 281,474,976,710,656\)</span> different combinations</li>
-</ul>
-<h3 id="html-colours">HTML colours<a class="headerlink" href="#html-colours" title="Permanent link">¶</a></h3>
-<ul>
-<li>HTML is a markup language used to create web pages</li>
-<li>RGB colour mode: the amount of R, G, B divided into 256 levels → described by 2 hex digits; each colour → three pairs of hex numbers ranging from 0 to F</li>
-</ul>
-<h3 id="registers-and-values">Registers and values<a class="headerlink" href="#registers-and-values" title="Permanent link">¶</a></h3>
-<ul>
-<li>Registers can hold a certain number of bits of binary → can work out what values should be held/are already held</li>
-</ul>
+<pre class="mermaid"><code>graph LR
+    cls(Class) -- blueprint for/instantiates --&gt; Object
+    Object -- instance of --&gt; cls
+    cls -- has --&gt; cst(Constructor)
+    cst -- constructs --&gt; cls
+    cst -- special type of --&gt; Method
+    cls -- "has (using &lt;code&gt;static&lt;/code&gt;)" --&gt; cla(Class-level attribute)
+    cla -- defines the state of --&gt; cls
+    cla -- type of --&gt; Attribute
+    cls -- "has (using &lt;code&gt;static&lt;/code&gt;)" --&gt; clm(Class-level method)
+    clm -- defines the behaviour of --&gt; cls
+    clm -- type of --&gt; Method
+
+    Object -- has --&gt; Attribute
+    Attribute -- defines the state of --&gt; Object
+
+    Object -- has --&gt; Method
+    Method -- defines the behaviour of --&gt; Object
+    Method -- has --&gt; Parameter
+    Method -- implements --&gt; Signature
+    Signature -- identifies --&gt; Method
+    Method -- may be --&gt; Accessor/getter
+    Accessor/getter -- type of --&gt; Method
+    Accessor/getter -- returns --&gt; Attribute
+    Method -- may be --&gt; Mutator/setter
+    Mutator/setter -- type of --&gt; Method
+    Mutator/setter -- sets --&gt; Attribute
+    Method -- may be --&gt; Overloading
+
+
+    subgraph Access levels
+        pub(&lt;code&gt;public&lt;/code&gt;)
+        pri(&lt;code&gt;private&lt;/code&gt;)
+    end
+    Attribute -- may be --&gt; pub
+    Attribute -- may be --&gt; pri
+    Method -- may be --&gt; pub
+    Method -- may be --&gt; pri</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Attributes</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Constructor</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// `this` refers to the current object</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Overloaded constructor</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Calls the constructor above</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Accessor</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Mutator</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 03b OS &amp; Applications" class="md-footer__link md-footer__link--prev" href="../03b/" rel="prev">
+<a aria-label="Previous: 03c Number Systems &amp; Data Representation" class="md-footer__link md-footer__link--prev" href="../03c/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -351,21 +338,8 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              03b OS &amp; Applications
+              03c Number Systems &amp; Data Representation
             </div>
-</div>
-</a>
-<a aria-label="Next: 04 OOP Intro + Java" class="md-footer__link md-footer__link--next" href="../04/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              04 OOP Intro + Java
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>
