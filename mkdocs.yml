@@ -1,22 +1,31 @@
-site_name: CompSci Notes
+site_name: Frank’s CompSci Notes
 site_author: Frank Zhang
+copyright: <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-nc/4.0/" target="blank"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" target="blank" /></a><br />Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+
 theme:
     name: material
+    icon:
+        logo: octicons/terminal-16
+    favicon: public/images/favicon.ico
     palette:
         - media: "(prefers-color-scheme: light)"
           scheme: default
           primary: blue
-          accent: teal
+          accent: blue
           toggle:
               icon: material/brightness-7
               name: Switch to dark mode
         - media: "(prefers-color-scheme: dark)"
           scheme: slate
-          primary: blue
-          accent: teal
+          primary: indigo
+          accent: blue
           toggle:
               icon: material/brightness-4
               name: Switch to light mode
+    features:
+        - navigation.indexes
+        - navigation.footer
+
 markdown_extensions:
     - toc:
           permalink: True
@@ -32,9 +41,13 @@ markdown_extensions:
                 format: !!python/name:pymdownx.superfences.fence_code_format
     - pymdownx.arithmatex:
           generic: true
+
 plugins:
     - glightbox
+    - search
+    - awesome-pages
+
 extra_javascript:
-    - js/mathjax.min.js
+    - public/js/mathjax.min.js
     - https://polyfill.io/v3/polyfill.min.js?features=es6
     - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

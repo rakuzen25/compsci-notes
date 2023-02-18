@@ -1,4 +1,4 @@
-# IB CompSci Notes
+# Home
 
 - [Java Notes](java.md)
 - [SL & HL Units](SLHL)

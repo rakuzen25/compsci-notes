@@ -1,8 +1,8 @@
-# Java Notes
+# Java Cheatsheet
 
 ## Boilerplate
 
-!!! attention
+!!! warning "Attention"
     The class name must be identical to the file name.
 
 ```java
@@ -101,7 +101,7 @@ See [HL01](HL/01.md).
 
 The equivalent of `vector` in C++ (a dynamic array).
 
-!!! attention
+!!! warning "Attention"
     `ArrayList` **cannot** accept primitive types (e.g. `int`, `double`), so a class must be used instead (e.g. `Integer`, `Double`).
 
 ```java
