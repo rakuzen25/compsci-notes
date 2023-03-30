@@ -9,4 +9,14 @@
     - [03b OS & Application Systems](03b.md)
     - [03c Number Bases & Conversions](03c.md)
 - [04 Object-Oriented Programming](04.md)
-- [05 Searching & Sorting Algorithms](05.md)
+- 05 Data Organisation and Retrieval (?)
+    - [05a Searching & Sorting Algorithms](05a.md)
+    - [05b Collections vs Arrays](05b.md)
+- 06 System Fundamentals
+    - [06a Systems in Organisations](06a.md)
+    - [06b System Design Basics](06b.md)
+- [07 Computer Organisation](07.md)
+- 08 Networks
+    - [08.1 Network Fundamentals](08/1.md)
+    - [08.2 Data Transmission](08/2.md)
+    - [08.3 Wireless Networking](08/3.md)
