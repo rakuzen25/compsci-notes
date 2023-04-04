@@ -1,5 +1,19 @@
 # Java Cheatsheet
 
+!!! note
+    Uninitialised local variables in Java will cause a **compile error**, while uninitialised class variables (fields) will be initialised to a **default value** of `null` (if reference type) or `0` (if primitive type).
+
+```java
+public class Test {
+    int a;
+    public static void main(String[] args) {
+        int b;
+        System.out.println(a); // 0
+        System.out.println(b); // Compile error
+    }
+}
+```
+
 ## Boilerplate
 
 !!! warning "Attention"
