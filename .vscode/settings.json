@@ -5,5 +5,20 @@
             "scheme": "file"
         }
     ],
-    "conventionalCommits.scopes": ["SL01", "SL02a", "SL02b", "SL03a", "SL03b", "SL03c", "SL04", "SL05a", "SL05b", "HL01", "HL02", "HL03", "Java"]
+    "conventionalCommits.scopes": [
+        "SL01",
+        "SL02a",
+        "SL02b",
+        "SL03a",
+        "SL03b",
+        "SL03c",
+        "SL04",
+        "SL05a",
+        "SL05b",
+        "HL01",
+        "HL02",
+        "HL03",
+        "HL04",
+        "Java"
+    ]
 }
