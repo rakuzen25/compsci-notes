@@ -14,10 +14,10 @@
     - 05 Data Organisation and Retrieval (?)
         - [05a Searching & Sorting Algorithms](SLHL/05a.md)
         - [05b Collections vs Arrays](SLHL/05b.md)
-    - 06 System Fundamentals
-        - [06a Systems in Organisations](SLHL/06a.md)
-        - [06b System Design Basics](SLHL/06b.md)
-    - [07 Computer Organisation](SLHL/07.md)
+    - [06 Computer Organisation](SLHL/06.md)
+    - 07 System Fundamentals
+        - [07a Systems in Organisations](SLHL/07a.md)
+        - [07b System Design Basics](SLHL/07b.md)
     - 08 Networks
         - [08.1 Network Fundamentals](SLHL/08/1.md)
         - [08.2 Data Transmission](SLHL/08/2.md)
