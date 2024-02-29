@@ -1,0 +1,53 @@
+site_name: IB CompSci Notes
+site_author: leranjun
+copyright: Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+
+theme:
+    name: material
+    icon:
+        logo: octicons/terminal-16
+    favicon: public/images/favicon.ico
+    palette:
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: blue
+          accent: blue
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: indigo
+          accent: blue
+          toggle:
+              icon: material/brightness-4
+              name: Switch to light mode
+    features:
+        - navigation.indexes
+        - navigation.footer
+
+markdown_extensions:
+    - toc:
+          permalink: True
+    - admonition
+    - smarty
+    - attr_list
+    - pymdownx.details
+    - md_in_html
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.arithmatex:
+          generic: true
+
+plugins:
+    - glightbox
+    - search
+    - awesome-pages
+
+extra_javascript:
+    - public/js/mathjax.min.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
