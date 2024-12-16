@@ -1,0 +1,2045 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02a/">
+      
+      
+        <link rel="next" href="../03a/">
+      
+      
+      <link rel="icon" href="../../public/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>02b Problem-Solving & Java (Project) - IB CompSci Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02b-problem-solving-java-project" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IB CompSci Notes" class="md-header__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IB CompSci Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02b Problem-Solving &amp; Java (Project)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IB CompSci Notes" class="md-nav__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    IB CompSci Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SLHL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SLHL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Computational Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02a Problem-Solving &amp; Java (Main)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    02b Problem-Solving &amp; Java (Project)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    02b Problem-Solving &amp; Java (Project)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-design-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Design &amp; Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Design & Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtaining requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct observation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interviews
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surveys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surveys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collecting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collecting documents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the situation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-illustrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of illustrations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prototype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-user-involvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-user involvement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#human-computer-interaction-hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human-Computer Interaction (HCI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Human-Computer Interaction (HCI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ergonomics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ergonomics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planning-system-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning &amp; System Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planning & System Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-of-software-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components of software testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of test data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-run-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dry-run testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-and-dynamic-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static and dynamic testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha-and-beta-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alpha and beta testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#black-box-and-white-box-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Black-box and white-box testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-and-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit and integration testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      User acceptance testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03a User Focus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03b OS &amp; Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03c Number Systems &amp; Data Representation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 OOP Intro + Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05a Searching &amp; Sorting Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05b Collections vs Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Computer Organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07a Systems in Organisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07b System Design Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../08/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    08
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            08
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.1 Network Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.2 Data Transmission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.3 Wireless Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../HL/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            HL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Problem-Solving &amp; Data Structures 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Control Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../HL/03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            03
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/03/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.1 Recursive Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/03/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.2 ADT Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/03/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.3 ADT Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/03/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.4 ADT Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HL/03/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.5 ADT Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-design-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Design &amp; Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Design & Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtaining requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct observation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interviews
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surveys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surveys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collecting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collecting documents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-situation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the situation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-illustrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of illustrations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prototype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-user-involvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-user involvement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#human-computer-interaction-hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human-Computer Interaction (HCI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Human-Computer Interaction (HCI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ergonomics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ergonomics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planning-system-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning &amp; System Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planning & System Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-of-software-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components of software testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of test data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-run-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dry-run testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-and-dynamic-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static and dynamic testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha-and-beta-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alpha and beta testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#black-box-and-white-box-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Black-box and white-box testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-and-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit and integration testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      User acceptance testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="02b-problem-solving-java-project">02b Problem-Solving &amp; Java (Project)<a class="headerlink" href="#02b-problem-solving-java-project" title="Permanent link">&para;</a></h1>
+<h2 id="system-design-analysis">System Design &amp; Analysis<a class="headerlink" href="#system-design-analysis" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>1.2.4 Identify the relevant stakeholders when planning a new system</li>
+<li>1.2.5 Describe methods of obtaining requirements from stakeholders</li>
+<li>1.2.6 Describe appropriate techniques for gathering the information needed to arrive at a workable solution</li>
+<li>1.2.7 Construct suitable representations to illustrate system requirements</li>
+<li>1.2.8 Describe the purpose of prototypes to demonstrate the proposed system to the client</li>
+<li>1.2.9 Discuss the importance of iteration during the design process</li>
+<li>1.2.10 Explain the possible consequences of failing to involve the end-user in the design process</li>
+</ul>
+</div>
+<p>Steps to design a new system:</p>
+<ol>
+<li>Determine stakeholders</li>
+<li>Obtain requirements</li>
+<li>Gather information for the new system</li>
+<li>Start designing/building the new system</li>
+</ol>
+<h3 id="stakeholders">Stakeholders<a class="headerlink" href="#stakeholders" title="Permanent link">&para;</a></h3>
+<p>A stakeholder is a person, group or organisation that <strong>has an interest or concern</strong> in an organisation (e.g. creditors, directors,
+employees, government agencies, owners/shareholders, suppliers, unions, and the community from which the business draws its resources).</p>
+<p><strong>Not all stakeholders are equal</strong> (e.g. customers v.s. employees).</p>
+<p><a class="glightbox" href="https://i.imgur.com/pZuD3Ry.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Internal v.s. external stakeholders" src="https://i.imgur.com/pZuD3Ry.png" /></a></p>
+<p>Key questions:</p>
+<ul>
+<li>Who will be affected by the new system?</li>
+<li>Who will the new system affect?</li>
+<li>Who will the end users be?</li>
+<li>What are their needs?</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>Stakeholders may not necessarily be the end users of the system.</p>
+</div>
+<p>Principle of utilitarianism: the greatest good for the greatest number of people.</p>
+<h3 id="obtaining-requirements">Obtaining requirements<a class="headerlink" href="#obtaining-requirements" title="Permanent link">&para;</a></h3>
+<p>Methods of obtaining requirements:</p>
+<ul>
+<li>Direct observation</li>
+<li>Interviews</li>
+<li>Surveys</li>
+<li>Collecting documents</li>
+</ul>
+<h4 id="direct-observation">Direct observation<a class="headerlink" href="#direct-observation" title="Permanent link">&para;</a></h4>
+<p>Direct observation is the process of <strong>watching people</strong> as they perform their tasks.</p>
+<ul>
+<li>Advantages<ul>
+<li>Possibility of gathering first-hand, unbiased information</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>People may work differently when being observed (Hawthorne effect)</li>
+</ul>
+</li>
+</ul>
+<h4 id="interviews">Interviews<a class="headerlink" href="#interviews" title="Permanent link">&para;</a></h4>
+<p>Interviews are <strong>face-to-face conversations</strong> that focus on obtaining reliable and valid data in the form of verbal responses from a person or a group of stakeholders.</p>
+<p>They can be <strong>structured</strong> (pre-planned, the same set of questions to each stakeholder) or <strong>unstructured</strong> (flexible, encouraging stakeholders to freely express their thoughts and personal beliefs).</p>
+<ul>
+<li>Advantages<ul>
+<li>Allows a lot of very <strong>detailed information</strong> to be gathered</li>
+<li>Questions can be asked to <strong>clarify</strong> information</li>
+<li><strong>Non-verbal communication</strong> can be observed</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li><strong>Time-consuming</strong></li>
+<li>Yields data that is difficult to <strong>summarise, evaluate and analyse</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="surveys">Surveys<a class="headerlink" href="#surveys" title="Permanent link">&para;</a></h4>
+<p>Surveys involve handing out <strong>questionnaires</strong> to respondents. They should be carefully constructed to elicit <strong>unambiguous responses</strong>.</p>
+<p>They can be <strong>closed/restricted</strong>, where the respondent is given a list of possible answers to choose from (yes/no, box-checking), or <strong>open/unrestricted</strong>, which involve free response questions. The former is easier to analyse, but the latter can provide more detailed information.</p>
+<ul>
+<li>Advantages<ul>
+<li>A <strong>large amount of data</strong> from a large group can be gathered</li>
+<li>Guarantees <strong>uniformity</strong></li>
+<li>Easier to <strong>analyse</strong> (if closed)</li>
+<li><strong>Time-saving</strong></li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Questions may suggest <strong>misleading/biased answer</strong></li>
+<li><strong>Response rate</strong> and <strong>quality of responses</strong> are not guaranteed</li>
+<li>Respondents may <strong>misinterpret</strong> questions</li>
+</ul>
+</li>
+</ul>
+<h4 id="collecting-documents">Collecting documents<a class="headerlink" href="#collecting-documents" title="Permanent link">&para;</a></h4>
+<p>Collecting documents is the process of <strong>looking into existing documents</strong> (e.g. user manuals, specifications, etc.) to find out how the current system works.</p>
+<ul>
+<li>Advantages<ul>
+<li>Detailed information about the present system can be gathered</li>
+<li>It can be seen where the old system has problems</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Time-consuming</li>
+<li>Just looking at the forms/outputs may be confusing</li>
+</ul>
+</li>
+</ul>
+<h3 id="understanding-the-situation">Understanding the situation<a class="headerlink" href="#understanding-the-situation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Examining current systems<ul>
+<li>Who does what?</li>
+<li>How do they do that? (hardware, software, network, peripherals, human resources)</li>
+</ul>
+</li>
+<li>Looking for competing products<ul>
+<li>Identify <strong>&ldquo;gaps&rdquo; in the market</strong></li>
+<li>Informing decisions around <strong>design choices</strong>, pricing and marketing strategies</li>
+<li>Provide insights into <strong>customer preferences and expectations</strong>.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Intellectual property</p>
+<p>You own intellectual property if you:</p>
+<ul>
+<li>created it (and it meets the requirements for copyright, a patent or a design)</li>
+<li>bought intellectual property rights from the creator or a previous owner</li>
+<li>have a brand that could be a trade mark, e.g. a well-known product name</li>
+</ul>
+</div>
+<ul>
+<li>Organisational abilities<ul>
+<li>Can the client afford a new system/new equipment?</li>
+<li>Can the staff use the new system? Is training needed?</li>
+<li>Can the client have any &lsquo;downtime&rsquo; to upgrade?</li>
+</ul>
+</li>
+<li>Literature search<ul>
+<li>The process of <strong>searching</strong> for information in books, journals, magazines, newspapers, etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="types-of-illustrations">Types of illustrations<a class="headerlink" href="#types-of-illustrations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>System flow chart</li>
+<li>Data flow diagram</li>
+<li>Structure chart</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/7f3bDXx.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="System flow chart" src="https://i.imgur.com/7f3bDXx.png" width="300" /></a></p>
+<p>A flow chart is a diagram that shows the <strong>sequence of steps</strong> in a process using different symbols linked with arrows.</p>
+<p><a class="glightbox" href="https://i.imgur.com/gI3AZi4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Data flow diagram" src="https://i.imgur.com/gI3AZi4.png" /></a></p>
+<p>A data flow diagram maps out the <strong>flow of information</strong> for
+any process or system. It uses symbols, such as rectangles, circles and arrows, with text labels to show data inputs, outputs, storage points and the route that data takes through the system.</p>
+<p><a class="glightbox" href="https://i.imgur.com/IsTz1EO.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Structure chart" src="https://i.imgur.com/IsTz1EO.png" /></a></p>
+<p>A structure chart represents the organisation of a system, showing the parts in <strong>hierarchical order</strong>.</p>
+<p>Other types of diagrams include <a href="../04/#unified-modeling-language-uml">UML</a> and wireframes.</p>
+<h3 id="prototype">Prototype<a class="headerlink" href="#prototype" title="Permanent link">&para;</a></h3>
+<p>Prototypes are <strong>abstract representations</strong> of a system that often focuses on only one or two key aspects. They are important in testing and illustrating the proposed system to the client.</p>
+<p>Purposes of prototypes:</p>
+<ul>
+<li>Fail early and inexpensively<ul>
+<li>Quickly weed out the approaches that don&rsquo;t work to focus on the ones that do</li>
+</ul>
+</li>
+<li>Gather more accurate requirements<ul>
+<li>Interviews and focus groups can fall short because many people find it difficult to <strong>conceptualise</strong> a product before they see it</li>
+<li>Prototypes can demonstrate the functionality to help solidify requirements for the final design</li>
+</ul>
+</li>
+<li>Technically understand the problem<ul>
+<li>Prototype address both the foreseen and the unforeseen technical challenges of a device&rsquo;s design</li>
+</ul>
+</li>
+<li>Resolve conflicts</li>
+<li>Rally financial support</li>
+<li>File patents</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/uVPGyLQ.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Process of prototyping" src="https://i.imgur.com/uVPGyLQ.png" /></a></p>
+<h3 id="iteration">Iteration<a class="headerlink" href="#iteration" title="Permanent link">&para;</a></h3>
+<p>Iteration is the process of <strong>repeating a process</strong> to improve it.</p>
+<p><a class="glightbox" href="https://i.imgur.com/1iNP84K.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IB MYP Design cycle" src="https://i.imgur.com/1iNP84K.png" width="300" /></a></p>
+<h3 id="end-user-involvement">End-user involvement<a class="headerlink" href="#end-user-involvement" title="Permanent link">&para;</a></h3>
+<p>Not involving the end user in the design process can lead to:</p>
+<ul>
+<li>Unsatisfactory results</li>
+<li>Unsuitable solutions for the user&rsquo;s problem, affecting the user&rsquo;s productivity</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/wsXgQrz.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Tree swing design failure" src="https://i.imgur.com/wsXgQrz.png" /></a></p>
+<h2 id="human-computer-interaction-hci">Human-Computer Interaction (HCI)<a class="headerlink" href="#human-computer-interaction-hci" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>1.2.12 Define the term usability</li>
+</ul>
+</div>
+<h3 id="ergonomics">Ergonomics<a class="headerlink" href="#ergonomics" title="Permanent link">&para;</a></h3>
+<p>Ergonomics is the scientific discipline that studies the <strong>interaction between humans and other elements of a system</strong> to optimize human well-being and overall system performance (how well the form fits the function).</p>
+<h3 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h3>
+<p>Accessibility is the design of products, devices, services, or environments for people who <strong>experience disabilities</strong>. This includes specialist peripherals and software such as:</p>
+<ul>
+<li>Braille keyboards</li>
+<li>Eye-typers</li>
+<li>Accessible controllers</li>
+<li>Screen readers</li>
+<li>Voice synthesizers</li>
+</ul>
+<h3 id="usability">Usability<a class="headerlink" href="#usability" title="Permanent link">&para;</a></h3>
+<p>Usability is the <strong>ease of use</strong> and <strong>learnability</strong> of a product, system or service. It consists of both ergonomics and accessibility.</p>
+<p><a class="glightbox" href="https://i.imgur.com/tPu6buQ.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="System acceptability breakdown" src="https://i.imgur.com/tPu6buQ.png" /></a></p>
+<p>Components of usability include:</p>
+<ul>
+<li><strong>Learnability</strong>: how easy is it to learn how to use the system?</li>
+<li><strong>Efficiency</strong>: how quickly can the system be used?</li>
+<li><strong>Memorability</strong>: how easy is it to remember how to use the system?</li>
+<li><strong>Errors</strong>: what is the rate of user errors when using the system?</li>
+<li><strong>Satisfaction</strong>: how satisfied are users with the system?</li>
+</ul>
+<h3 id="utility">Utility<a class="headerlink" href="#utility" title="Permanent link">&para;</a></h3>
+<p><strong>Utility</strong> refers to how well the design&rsquo;s functionality meets the user&rsquo;s needs.</p>
+<p>A useful product fulfils both <strong>usability</strong> and <strong>utility</strong>. It is not useful if it is easy to use but does not meet the user&rsquo;s needs, nor is it useful if it meets the user&rsquo;s needs but is difficult to use.</p>
+<h2 id="planning-system-installation">Planning &amp; System Installation<a class="headerlink" href="#planning-system-installation" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>1.1.7 Suggest various types of testing</li>
+</ul>
+</div>
+<p>Testing is important because it can identify <strong>errors</strong> and <strong>defects</strong> in the system. It is also a way to <strong>evaluate</strong> the system.</p>
+<p>A system that does not work as expected can reduce <strong>productivity</strong> and <strong>end-user satisfaction</strong>.</p>
+<h3 id="components-of-software-testing">Components of software testing<a class="headerlink" href="#components-of-software-testing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Functionality testing</li>
+<li>User experience testing</li>
+<li>Performance and load testing</li>
+<li>Compatibility testing</li>
+<li>Security testing</li>
+<li>Test management and automation</li>
+</ul>
+<h3 id="types-of-test-data">Types of test data<a class="headerlink" href="#types-of-test-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Normal data</strong>: data that is <strong>expected</strong> to be entered into the system (should be <strong>accepted</strong>)</li>
+<li><strong>Boundary data</strong>: data that is on the <strong>edge</strong> of the range of values that the system is designed to handle (should be <strong>accepted</strong>)</li>
+<li><strong>Abnormal data</strong>: data that is <strong>not expected</strong> to be entered into the system, such as data outside a range or of an incorrect type (should be <strong>rejected</strong>)</li>
+</ul>
+<h3 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h3>
+<p>Debugging is the process of <strong>finding and removing errors</strong> from a program.</p>
+<h3 id="automated-testing">Automated testing<a class="headerlink" href="#automated-testing" title="Permanent link">&para;</a></h3>
+<p>Automated testing is the process of <strong>automating the testing process</strong> to reduce the time and effort required to test a system. It makes use of tools that control the execution of test cases and compare the results with the expected results.</p>
+<h3 id="dry-run-testing">Dry-run testing<a class="headerlink" href="#dry-run-testing" title="Permanent link">&para;</a></h3>
+<p>Dry-run testing is the process of <strong>simulating the actual use of a system</strong> to test its functionality and performance, conducted using pen and paper or a prototype.</p>
+<h3 id="static-and-dynamic-testing">Static and dynamic testing<a class="headerlink" href="#static-and-dynamic-testing" title="Permanent link">&para;</a></h3>
+<p>Static testing is the process of <strong>examining the source code</strong> of a program to find errors <strong>without executing it</strong>. It is often <strong>implicit</strong> (e.g. code review, proofreading, linting) and involves <strong>verification</strong>.</p>
+<p>Dynamic testing is the process of <strong>executing the program</strong> with a given set of test cases to find errors. It may begin before the program is complete to test particular components. It involves <strong>validation</strong>.</p>
+<p>These together help improve <strong>software quality</strong>.</p>
+<h3 id="alpha-and-beta-testing">Alpha and beta testing<a class="headerlink" href="#alpha-and-beta-testing" title="Permanent link">&para;</a></h3>
+<p>Alpha testing is performed by testers who are usually <strong>internal employees</strong> at the <strong>developer&rsquo;s site</strong> before the system is <strong>released</strong> to the client.</p>
+<p>Beta testing is performed by testers who are usually <strong>external clients/end users</strong> at the <strong>client location</strong> for them to give comments and suggestions.</p>
+<h3 id="black-box-and-white-box-testing">Black-box and white-box testing<a class="headerlink" href="#black-box-and-white-box-testing" title="Permanent link">&para;</a></h3>
+<p>Black-box testing is the process of testing a system from the <strong>user&rsquo;s perspective</strong>, treating it as a black box without knowing its internals. It is also known as <strong>functional testing</strong>. Tests are using software interfaces and ensuring they work as expected.</p>
+<p>White-box testing is the process of testing a system from the <strong>developer&rsquo;s perspective</strong>, using the knowledge of its workings. It is also known as <strong>structural testing</strong>.</p>
+<p><a class="glightbox" href="https://i.imgur.com/5soz0Hs.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Black-box vs white-box testing" src="https://i.imgur.com/5soz0Hs.png" /></a></p>
+<h3 id="unit-and-integration-testing">Unit and integration testing<a class="headerlink" href="#unit-and-integration-testing" title="Permanent link">&para;</a></h3>
+<p>Unit testing is the process of testing a <strong>single component</strong> of a system to ensure that it works as expected.</p>
+<p>Integration testing is the process of testing the <strong>interaction</strong> between components of a system to ensure that they work together as expected.</p>
+<h3 id="user-acceptance-testing">User acceptance testing<a class="headerlink" href="#user-acceptance-testing" title="Permanent link">&para;</a></h3>
+<p>User acceptance testing is performed by the <strong>client</strong> to determine whether or not the system meets their requirements. This is the <strong>final stage</strong> of testing before the system is released to the client.</p>
+<p>It differs from usability testing in that it tests whether the system meets the client&rsquo;s <strong>requirements</strong>, whereas usability testing tests whether the system is <strong>functional</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02a/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02a Problem-Solving &amp;amp; Java (Main)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                02a Problem-Solving &amp; Java (Main)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03a/" class="md-footer__link md-footer__link--next" aria-label="Next: 03a User Focus">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                03a User Focus
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../public/js/mathjax.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
