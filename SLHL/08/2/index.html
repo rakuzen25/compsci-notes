@@ -1,0 +1,1494 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1/">
+      
+      
+        <link rel="next" href="../3/">
+      
+      
+      <link rel="icon" href="../../../public/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>08.2 Data Transmission - IB CompSci Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#082-data-transmission" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="IB CompSci Notes" class="md-header__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IB CompSci Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              08.2 Data Transmission
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IB CompSci Notes" class="md-nav__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    IB CompSci Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SLHL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SLHL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Computational Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02a Problem-Solving &amp; Java (Main)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02b Problem-Solving &amp; Java (Project)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03a User Focus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03b OS &amp; Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03c Number Systems &amp; Data Representation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 OOP Intro + Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05a Searching &amp; Sorting Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05b Collections vs Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Computer Organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07a Systems in Organisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07b System Design Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    08
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            08
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.1 Network Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    08.2 Data Transmission
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    08.2 Data Transmission
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#protocols-and-data-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols and data packets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols and data packets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#necessity-of-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Necessity of protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speed-of-data-transmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed of data transmission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transmission-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmission media
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packet-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packet switching
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.3 Wireless Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../HL/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            HL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Problem-Solving &amp; Data Structures 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Control Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../HL/03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            03
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.1 Recursive Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.2 ADT Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.3 ADT Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.4 ADT Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.5 ADT Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#protocols-and-data-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols and data packets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols and data packets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#necessity-of-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Necessity of protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speed-of-data-transmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed of data transmission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transmission-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmission media
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packet-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packet switching
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="082-data-transmission">08.2 Data Transmission<a class="headerlink" href="#082-data-transmission" title="Permanent link">&para;</a></h1>
+<h2 id="protocols-and-data-packets">Protocols and data packets<a class="headerlink" href="#protocols-and-data-packets" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.6 Define the terms: protocol, data packet</li>
+<li>3.1.7 Explain why protocols are necessary</li>
+</ul>
+</div>
+<ul>
+<li>Protocol: a set of <strong>rules/guidelines</strong> that help with <strong>interaction</strong> between individuals or devices</li>
+<li>Network protocol: an <strong>agreed-upon collection of rules</strong> that servers, computers and other devices must follow for the transmissions to be successful (e.g. how the data is to be <strong>formatted and packaged</strong>, whether or not <strong>data compression</strong> is allowed)</li>
+<li>Standards vs protocols<ul>
+<li>Standards: <strong>agreements</strong> made by people/organisations to allow a <strong>consistent approach</strong> by <strong>manufacturers or programmers</strong> (e.g. HTML)</li>
+<li>Protocols: sets of <strong>rules</strong> (designed by people) to allow different <strong>devices</strong> to <strong>communicate</strong> effectively (e.g. HTTP)</li>
+<li>Standards are about <strong>things</strong> while protocols are about <strong>processes</strong></li>
+</ul>
+</li>
+<li>Data packets: a <strong>unit of data</strong> that is <strong>routed</strong> between an <strong>origin</strong> and a <strong>destination</strong> on a network<ul>
+<li>Composed of <strong>overheads</strong> (e.g. a <strong>header</strong>) and a <strong>payload</strong> (the actual data)</li>
+<li>Overhead includes <strong>source</strong> and <strong>destination</strong> addresses, the <strong>order</strong> of the packet, <strong>error-checking</strong> information, etc.</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/3lUMhxh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example of a data packet" src="https://i.imgur.com/3lUMhxh.png" /></a></p>
+<h3 id="necessity-of-protocols">Necessity of protocols<a class="headerlink" href="#necessity-of-protocols" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Provide <strong>standard</strong> ways of communicating and interacting (ensure <strong>compatibility</strong>)</li>
+<li>Data integrity: ensure the overall <strong>completeness</strong>, <strong>accuracy</strong> and <strong>consistency</strong> of data<ul>
+<li>Error checking: detect <strong>noise</strong> or other <strong>impairments</strong> introduced into data while it is transmitted from source to destination</li>
+</ul>
+</li>
+<li>Flow control (<strong>speed</strong> of transmission): prevent a fast sender from overwhelming a slow receiver</li>
+<li>Deadlock prevention: when two nodes or processes are trying to access <strong>the same node at the same moment</strong>, causing neither to be able to proceed</li>
+<li>Congestion: when a node or link carries so much data that it may <strong>deteriorate network service quality</strong>, resulting in queuing delay, frame or data packet loss and the blocking of new connections</li>
+</ul>
+<h2 id="speed-of-data-transmission">Speed of data transmission<a class="headerlink" href="#speed-of-data-transmission" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.8 Explain why the speed of data transmission across a network can vary</li>
+</ul>
+</div>
+<ul>
+<li>Constantly changing factors<ul>
+<li>Number of people (<strong>traffic</strong>)</li>
+<li><strong>Concentration/geographic distribution</strong> of traffic</li>
+<li><strong>Kind</strong> of activity (e.g. Netflix vs email - bigger files and more simultaneous connections)</li>
+<li><strong>Interference/noise</strong> resulting in packets getting lost and needing to be resent</li>
+</ul>
+</li>
+<li>Non-changing factors (software/hardware)<ul>
+<li>Transmitting server and receiving client hardware (e.g. CPU, amount of RAM, speed of routers/switches/network cards)</li>
+<li>Transmission media (e.g. fibre optic cables, copper cables, wireless)</li>
+<li>Protocol: compression, speed (allowed by the protocol), congestion, security</li>
+<li>ISP: geographical distance, kind of transmission service, maximum speed</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-compression">Data compression<a class="headerlink" href="#data-compression" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.9 Explain why compression of data is often necessary when transmitting across a network</li>
+</ul>
+</div>
+<ul>
+<li>Compression: the process of <strong>reducing the size</strong> of a file by removing unnecessary data</li>
+<li>User-level compression: <strong>lossless</strong> (e.g. ZIP, PNG, GIF) or <strong>lossy</strong> (e.g. JPEG, MP3, MP4)</li>
+<li>Network-level compression: reduces the size of data frames to be transmitted over a network link to <strong>reduce the bandwidth</strong> required, prevent <strong>congestion</strong>, and <strong>increase the speed</strong> of transmission</li>
+</ul>
+<h2 id="transmission-media">Transmission media<a class="headerlink" href="#transmission-media" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.10 Outline the characteristics of different transmission media</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Speed</th>
+<th>Reliability</th>
+<th>Cost</th>
+<th>Security</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metal - Twisted Pair (Ethernet)</td>
+<td>100 Mbps - 10 Gbps</td>
+<td>Good</td>
+<td>Low</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Metal - Coaxial</td>
+<td>Slow - 10 Mbps</td>
+<td>Better</td>
+<td>Low</td>
+<td>Better</td>
+</tr>
+<tr>
+<td>Fiber Optic</td>
+<td>Up to 100 Gbps</td>
+<td>Best</td>
+<td>High (incl. set-up)</td>
+<td>Best</td>
+</tr>
+<tr>
+<td>Wireless</td>
+<td>100 Mbps max.</td>
+<td>Not too bad, but&hellip;</td>
+<td>Not too bad</td>
+<td>Issues</td>
+</tr>
+</tbody>
+</table>
+<h2 id="packet-switching">Packet switching<a class="headerlink" href="#packet-switching" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.11 Explain how data is transmitted by packet switching</li>
+</ul>
+</div>
+<ul>
+<li>Packet switching: breaking a message into <strong>packets</strong> that are <strong>routed</strong> individually to the destination, where they are <strong>reassembled</strong> into the original message</li>
+<li>Steps of packet switching<ol>
+<li>A file is <strong>broken up</strong> into packets of a <strong>fixed length</strong> and each packet is transmitted <strong>separately</strong></li>
+<li>Each packet includes a <strong>packet number</strong></li>
+<li>Packets are <strong>assembled</strong> and <strong>reordered</strong> at the destination</li>
+<li>Each packet has a <strong>counter</strong> which <strong>decrements</strong> as it passes through a node; after a certain number of hops, it is assumed the packet is <strong>lost</strong> and the packet is <strong>trashed</strong></li>
+<li>Packet errors can occur as a result of <strong>collisions or interference</strong>; <strong>retransmission</strong> is requested in these cases</li>
+<li>Packet switching is suitable when <strong>small delays</strong> can be tolerated (i.e. email transmission), or the complete transmission <strong>doesn&rsquo;t have to happen together</strong></li>
+</ol>
+</li>
+<li>Advantages<ul>
+<li>The transmission will not be <strong>broken</strong> if any one link is broken (can be routed through another link)</li>
+<li>Avoids congestion: more than one route can be used; faster overall network</li>
+<li><strong>Cheaper</strong> for individuals: no need for dedicated lines</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/jgfHOUn.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example animation of packet switching" src="https://i.imgur.com/jgfHOUn.gif" /></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 08.1 Network Fundamentals">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                08.1 Network Fundamentals
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../3/" class="md-footer__link md-footer__link--next" aria-label="Next: 08.3 Wireless Networking">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                08.3 Wireless Networking
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../public/js/mathjax.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -1,0 +1,1845 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../2/">
+      
+      
+      <link rel="icon" href="../../../public/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>08.1 Network Fundamentals - IB CompSci Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#081-network-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="IB CompSci Notes" class="md-header__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IB CompSci Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              08.1 Network Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IB CompSci Notes" class="md-nav__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    IB CompSci Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SLHL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SLHL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Computational Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02a Problem-Solving &amp; Java (Main)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02b Problem-Solving &amp; Java (Project)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03a User Focus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03b OS &amp; Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03c Number Systems &amp; Data Representation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 OOP Intro + Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05a Searching &amp; Sorting Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05b Collections vs Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Computer Organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07a Systems in Organisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07b System Design Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    08
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            08
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    08.1 Network Fundamentals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    08.1 Network Fundamentals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-area-network-lan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Area Network (LAN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Area Network (LAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-local-area-network-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Local Area Network (VLAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireless-local-area-network-wlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireless Local Area Network (WLAN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wide-area-network-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wide Area Network (WAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-area-network-san" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Area Network (SAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intranet-and-extranet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intranet and extranet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-network-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Private Network (VPN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-area-network-pan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Area Network (PAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-to-peer-p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peer-to-peer (P2P)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance-of-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importance of standards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layers-of-a-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layers of a network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layers of a network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#networking-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vpn-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN technologies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VPN technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpn-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN protocols
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of VPN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.2 Data Transmission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.3 Wireless Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../HL/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            HL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Problem-Solving &amp; Data Structures 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Control Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../HL/03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            03
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.1 Recursive Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.2 ADT Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.3 ADT Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.4 ADT Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HL/03/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.5 ADT Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-area-network-lan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Area Network (LAN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Area Network (LAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-local-area-network-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Local Area Network (VLAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireless-local-area-network-wlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireless Local Area Network (WLAN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wide-area-network-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wide Area Network (WAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-area-network-san" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Area Network (SAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intranet-and-extranet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intranet and extranet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-private-network-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Private Network (VPN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-area-network-pan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Area Network (PAN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-to-peer-p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peer-to-peer (P2P)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance-of-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importance of standards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layers-of-a-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layers of a network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layers of a network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#networking-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vpn-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN technologies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VPN technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpn-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN protocols
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of VPN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="081-network-fundamentals">08.1 Network Fundamentals<a class="headerlink" href="#081-network-fundamentals" title="Permanent link">&para;</a></h1>
+<h2 id="types-of-networks">Types of networks<a class="headerlink" href="#types-of-networks" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.1 Identify different types of networks</li>
+</ul>
+</div>
+<p>Network: a <strong>group of computer systems</strong> and other computing hardware devices that are <strong>linked together</strong> through <strong>communication channels</strong> to facilitate <strong>communication and resource-sharing</strong> among a range of users.</p>
+<h3 id="local-area-network-lan">Local Area Network (LAN)<a class="headerlink" href="#local-area-network-lan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Covers a <strong>small geographical area</strong> (e.g. a single building)</li>
+<li>Mostly based on <strong>Ethernet</strong> technology</li>
+</ul>
+<h4 id="virtual-local-area-network-vlan">Virtual Local Area Network (VLAN)<a class="headerlink" href="#virtual-local-area-network-vlan" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A <strong>logical</strong> group of workstations, servers and network devices that appear to be on the same LAN despite their geographical distribution (as opposed to a <strong>physical</strong> LAN)</li>
+<li>Allows a network of computers and users to communicate in a <strong>simulated environment</strong> as if they exist in a single LAN</li>
+<li>e.g. separating a network into different departments/access levels, multi-player games in a gaming cafe</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/kwKOEal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VLAN setup" src="https://i.imgur.com/kwKOEal.png" /></a></p>
+<h4 id="wireless-local-area-network-wlan">Wireless Local Area Network (WLAN)<a class="headerlink" href="#wireless-local-area-network-wlan" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A <strong>wireless</strong> distribution method for two or more devices that use <strong>high-frequency radio waves</strong> and often include an access point to the Internet</li>
+<li>Allows users to <strong>move around</strong> the coverage area while maintaining a network connection</li>
+</ul>
+<h3 id="wide-area-network-wan">Wide Area Network (WAN)<a class="headerlink" href="#wide-area-network-wan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>More than one LAN connected across <strong>wider geographic locations</strong> (e.g. different buildings in a city)</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/flpjdaa.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="WAN setup in a campus" src="https://i.imgur.com/flpjdaa.jpg" /></a></p>
+<h3 id="storage-area-network-san">Storage Area Network (SAN)<a class="headerlink" href="#storage-area-network-san" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>dedicated high-speed network</strong> that provides access to <strong>block-level storage</strong></li>
+<li>Makes a network of storage devices accessible to multiple servers (appear to servers as attached drives)</li>
+</ul>
+<h3 id="internet">Internet<a class="headerlink" href="#internet" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>globally connected</strong> network system that uses the <strong>TCP/IP protocol</strong> to transmit data via various types of media</li>
+<li>A network of <strong>global exchanges</strong> connected by wired, wireless and fibre-optic technologies</li>
+</ul>
+<h3 id="intranet-and-extranet">Intranet and extranet<a class="headerlink" href="#intranet-and-extranet" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Intranet: a <strong>local/restricted/private</strong> network that provides an <strong>internal</strong> network for an organisation (e.g. an employee announcement board)</li>
+<li>Extranet: an Intranet that can be partially accessed by <strong>authorised users outside the organisation</strong> (e.g. suppliers, vendors, partners, customers)</li>
+</ul>
+<h3 id="virtual-private-network-vpn">Virtual Private Network (VPN)<a class="headerlink" href="#virtual-private-network-vpn" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A group of computers connected through <strong>encrypted lines</strong>, either within another LAN or around the world, using the <strong>Internet</strong></li>
+<li>Allows people to log into a network <strong>remotely</strong> and access its resources, but <strong>encrypts</strong> the connection to prevent eavesdropping</li>
+</ul>
+<h3 id="personal-area-network-pan">Personal Area Network (PAN)<a class="headerlink" href="#personal-area-network-pan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A computer network used for <strong>data transmission</strong> among devices such as computers, telephones and personal digital assistants (PDAs) that are <strong>close to one person</strong> (<strong>very small area</strong>)</li>
+<li>Can be created using e.g. Bluetooth, infrared, USB</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/cRsQn0o.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PAN example with Bluetooth" src="https://i.imgur.com/cRsQn0o.png" /></a></p>
+<h3 id="peer-to-peer-p2p">Peer-to-peer (P2P)<a class="headerlink" href="#peer-to-peer-p2p" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>network model</strong> in which computers or hardware devices <strong>directly</strong> exchange files <strong>without needing a hub/server</strong> to direct and manage the traffic</li>
+<li>&ldquo;Equal client&rdquo; system</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/Nbfnwlb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Client-server vs P2P" src="https://i.imgur.com/Nbfnwlb.png" /></a></p>
+<h2 id="importance-of-standards">Importance of standards<a class="headerlink" href="#importance-of-standards" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.2 Outline the importance of standards in the construction of networks</li>
+</ul>
+</div>
+<ul>
+<li>So parts can fit together and work together<ul>
+<li>All Ethernet cables fit into all hubs and switches etc.</li>
+</ul>
+</li>
+<li>So users can expect certain levels of performance etc.<ul>
+<li>A CAT-5 Ethernet cable allows data transfer at a certain bandwidth</li>
+</ul>
+</li>
+<li>So interacting parts do not interfere with each other<ul>
+<li>Different WiFi networks do not interfere with each other</li>
+</ul>
+</li>
+<li>
+<p>So equipment is safe, with electrical output etc.</p>
+<ul>
+<li>A modem will not overheat when plugged into either 110 Volt or 220 Volt sockets</li>
+</ul>
+</li>
+<li>
+<p>Provides <strong>common ground</strong> for manufacturers of networking products on which to build their systems</p>
+</li>
+<li>Interconnects products from <strong>various vendors</strong></li>
+<li>Facilitates <strong>communication</strong> between devices</li>
+</ul>
+<h2 id="layers-of-a-network">Layers of a network<a class="headerlink" href="#layers-of-a-network" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.3 Describe how communication over networks is broken down into different layers</li>
+</ul>
+</div>
+<p>Mnemonic:</p>
+<ul>
+<li>(bottom-up) People Don&rsquo;t Need Those Stupid Packets Anyway</li>
+<li>(top-down) All People Seem To Need Data Processing</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Name</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>Application</td>
+<td>Provides the ability for <strong>user applications</strong> to interact with the network</td>
+<td>HTTP, FTP, SMTP</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Presentation</td>
+<td>Preparation of appropriate <strong>data representation</strong>, <strong>encryption/decryption</strong> and <strong>compression/decompression</strong></td>
+<td>ASCII, JPEG, MPEG, SSL</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Session</td>
+<td>Provides <strong>session management</strong> between applications</td>
+<td>NetBIOS, PPTP, RPC</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Transport</td>
+<td>Provides <strong>reliable</strong> and <strong>sequential</strong> packet delivery through <strong>error correction</strong> and <strong>flow control</strong></td>
+<td>TCP, UDP</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Network</td>
+<td>Provides <strong>logical addressing</strong> and <strong>routing</strong> of packets across networks (determination of the <strong>path</strong> through the network the data will go)</td>
+<td>IP, ICMP, ARP</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Data Link</td>
+<td>Provides <strong>physical addressing</strong> and <strong>error detection</strong> for packets</td>
+<td>Ethernet, PPP, ATM</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Physical</td>
+<td>Provides <strong>physical topology</strong> and <strong>electrical</strong> or <strong>optical</strong> signalling</td>
+<td>Cables, connectors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="networking-protocols">Networking protocols<a class="headerlink" href="#networking-protocols" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">See also</p>
+<p><a href="../2/#protocols-and-data-packets">SL08.2 Data Transmission § Protocols and data packets</a></p>
+</div>
+<ul>
+<li>TCP/IP: the <strong>standard</strong> protocol for the Internet; a <strong>packet-switching</strong> protocol that resides in the Network and Transport layers of the OSI model</li>
+<li>UDP: a <strong>connectionless</strong> protocol that <strong>does not guarantee</strong> the delivery of packets</li>
+<li>IP address: a <strong>unique</strong> address that <strong>identifies</strong> a device on the Internet or a local network</li>
+</ul>
+<h2 id="vpn-technologies">VPN technologies<a class="headerlink" href="#vpn-technologies" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>3.1.4 Identify the technologies required to provide a VPN</li>
+<li>3.1.5 Evaluate the use of a VPN</li>
+</ul>
+</div>
+<h3 id="vpn-hardware">VPN hardware<a class="headerlink" href="#vpn-hardware" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Network Access Server: an access point to the Internet at both ends of the connection (e.g. router, gateway server)</li>
+<li>VPN Tunneling Server (PPTP server): allows PPTP tunnelling through the Internet</li>
+</ul>
+<h3 id="vpn-software">VPN software<a class="headerlink" href="#vpn-software" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tunnelling: establishing and maintaining a <strong>logical network connection</strong> to transmit <strong>specially formatted data packets</strong>, which are <strong>encapsulated</strong> within some other protocol and will be <strong>de-encapsulated</strong> on the receiving side</li>
+<li>Encryption: <strong>encoding</strong> data so that only a computer with the <strong>right decoder</strong> will be able to read and use it</li>
+</ul>
+<h3 id="vpn-protocols">VPN protocols<a class="headerlink" href="#vpn-protocols" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Point-to-Point Tunneling Protocol (PPTP): one of the <strong>most common</strong> protocols used for controlling VPN sessions; developed by Microsoft and can be used by Windows machines</li>
+<li>Layer 2 Tunneling Protocol (L2TP): more <strong>secure</strong>; uses UDP; encrypts data using a strong 256-bit encryption system (so <strong>slower</strong> and takes more <strong>CPU power</strong>); created by Cisco and Microsoft</li>
+<li>Secure Sockets Layer (SSL): can be used with a standard web browser (not Windows-specific); does not require <strong>specialised servers</strong></li>
+</ul>
+<h3 id="use-of-vpn">Use of VPN<a class="headerlink" href="#use-of-vpn" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Businesses/organisations<ul>
+<li>Advantages<ul>
+<li>Security: employees can process sensitive data securely from a remote site; preventing industrial espionage</li>
+<li>Remote work: allows people to <strong>work at home</strong></li>
+<li>Cost savings: less expensive than building a <strong>physical WAN</strong>; cost savings on <strong>office space</strong> and <strong>travel</strong> if employees work from home</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Distractions: employees may be <strong>distracted</strong> when working from a remote environment (e.g. home chores, family) and <strong>less productive</strong></li>
+<li>Less person-to-person contact: <strong>decreased efficiency</strong> for group projects and more <strong>interpersonal issues</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Individuals<ul>
+<li>Advantages<ul>
+<li>Stay-at-home parents: can <strong>work from home</strong> while taking care of children</li>
+<li>More healthy <strong>work environment</strong>: can take a break when needed</li>
+<li>Security: e-commerce transactions are <strong>encrypted</strong></li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Anti-social: <strong>less social interaction</strong> with colleagues</li>
+<li>Illegal uses of VPN (e.g. hacking, piracy, illegal downloading)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 08 Networks">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                08 Networks
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../2/" class="md-footer__link md-footer__link--next" aria-label="Next: 08.2 Data Transmission">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                08.2 Data Transmission
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../public/js/mathjax.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

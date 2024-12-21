@@ -1,0 +1,2136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02/">
+      
+      
+        <link rel="next" href="../03/">
+      
+      
+      <link rel="icon" href="../../public/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>04 Resource Management - IB CompSci Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-resource-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IB CompSci Notes" class="md-header__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IB CompSci Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04 Resource Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IB CompSci Notes" class="md-nav__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    IB CompSci Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../SLHL/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SLHL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SLHL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Computational Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/02a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02a Problem-Solving &amp; Java (Main)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/02b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02b Problem-Solving &amp; Java (Project)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/03a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03a User Focus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/03b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03b OS &amp; Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/03c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03c Number Systems &amp; Data Representation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 OOP Intro + Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/05a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05a Searching &amp; Sorting Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/05b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05b Collections vs Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Computer Organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/07a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07a Systems in Organisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/07b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07b System Design Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../SLHL/08/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    08
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            08
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/08/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.1 Network Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/08/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.2 Data Transmission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/08/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.3 Wireless Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            HL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Problem-Solving &amp; Data Structures 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Control Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    04 Resource Management
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    04 Resource Management
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      System resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources-to-manage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources to manage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources to manage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secondary storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bandwidth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen resolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sound processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphics-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics Processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-interface-controller-nic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network interface controller (NIC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources-in-different-computer-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources in different computer systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources in different computer systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mainframe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcs-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCs (Desktop)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-laptops-netbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sub-laptops (netbooks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-phonesmobiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell phones/mobiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tablets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdas-personal-digital-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDAs (Personal Digital Assistants)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Camera
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations of resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-of-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role of the operating system
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role of the operating system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-of-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions of the operating system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-resource-management-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS resource management techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OS resource management techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-slicingscheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-slicing/scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multitasking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multitasking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory-and-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual memory and paging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated OS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiding-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hiding complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            03
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.1 Recursive Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.2 ADT Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.3 ADT Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.4 ADT Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.5 ADT Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      System resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources-to-manage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources to manage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources to manage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secondary storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bandwidth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen resolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sound processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphics-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics Processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-interface-controller-nic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network interface controller (NIC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources-in-different-computer-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources in different computer systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources in different computer systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mainframe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcs-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCs (Desktop)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-laptops-netbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sub-laptops (netbooks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-phonesmobiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell phones/mobiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tablets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdas-personal-digital-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDAs (Personal Digital Assistants)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Camera
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations of resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-of-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role of the operating system
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role of the operating system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-of-the-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions of the operating system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-resource-management-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS resource management techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OS resource management techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-slicingscheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-slicing/scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multitasking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multitasking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory-and-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual memory and paging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dedicated OS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiding-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hiding complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="04-resource-management">04 Resource Management<a class="headerlink" href="#04-resource-management" title="Permanent link">&para;</a></h1>
+<h2 id="system-resources">System resources<a class="headerlink" href="#system-resources" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>6.1.1 Identify the resources that need to be managed within a computer system</li>
+<li>6.1.2 Evaluate the resources available in a variety of computer systems</li>
+<li>6.1.3 Identify the limitations of a range of resources in a specified computer system</li>
+<li>6.1.4 Describe the possible problems resulting from the limitations in the resources in a computer system</li>
+</ul>
+</div>
+<h3 id="resources-to-manage">Resources to manage<a class="headerlink" href="#resources-to-manage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Primary memory (RAM)</li>
+<li>Secondary storage/memory (HDD/SSD/optical drives)</li>
+<li>Processor speed</li>
+<li>Bandwidth</li>
+<li>Screen resolution</li>
+<li>Sound processor</li>
+<li>Graphics processor</li>
+<li>Cache</li>
+<li>Network connectivity</li>
+</ul>
+<h4 id="primary-memory">Primary memory<a class="headerlink" href="#primary-memory" title="Permanent link">&para;</a></h4>
+<p>The primary memory is a place where all data/programs <strong>currently being processed</strong> are kept.</p>
+<p>Too little physical memory means the system needs to use <strong>secondary storage</strong> via <strong>virtual memory</strong>, which is much slower; if virtual memory cannot be created or is insufficient, the program/data <strong>cannot be loaded</strong>. It influences how many processes can be done simultaneously.</p>
+<h4 id="secondary-storage">Secondary storage<a class="headerlink" href="#secondary-storage" title="Permanent link">&para;</a></h4>
+<p>The secondary storage is a place where data/programs can be stored <strong>even if power is lost</strong> (RAM is volatile).</p>
+<p>Too little storage space limits <strong>how much data</strong> can be kept. There would be no place to <strong>save the work</strong> so data might be <strong>lost</strong>. The OS cannot use storage as <strong>virtual memory</strong> if RAM fills up.</p>
+<h4 id="processor">Processor<a class="headerlink" href="#processor" title="Permanent link">&para;</a></h4>
+<p>The processor does all calculations in a computer system.</p>
+<p>The processor speed is a measurement of <strong>how many calculations</strong> can be done per second (1GHz = 1 billion calculations per second).</p>
+<p>A core is an <strong>ALU</strong> (arithmetic logic unit) that can do calculations. A multi-core processor has multiple ALUs, so it can do more calculations at once.</p>
+<p>Too slow a processor means it will <strong>take longer</strong> to perform tasks. Fewer cores mean the processor can only do a limited number of tasks at once (i.e. affects how many tasks a system can cope with <strong>simultaneously</strong>).</p>
+<h4 id="bandwidth">Bandwidth<a class="headerlink" href="#bandwidth" title="Permanent link">&para;</a></h4>
+<p>Bandwidth is a measurement of how much data can be sent <strong>at the same time</strong> in a certain time frame (also called bitrate), measured in bits per second (bps).</p>
+<p>Limiting the bandwidth means data will <strong>take longer</strong> to move between two points (i.e. affects how long it takes before data can be processed in its entirety).</p>
+<h4 id="screen-resolution">Screen resolution<a class="headerlink" href="#screen-resolution" title="Permanent link">&para;</a></h4>
+<p>Screen resolution is a measurement of the <strong>number of pixels</strong> (the height times the width) of the display.</p>
+<p>If the resolution is too <strong>limited</strong>, the number of pixels that can be displayed is <strong>less</strong>, so the display might be <strong>pixelated</strong> (blocky). Lower resolution means <strong>smaller file size</strong>, but <strong>poorer quality</strong> images.</p>
+<h4 id="sound-processor">Sound processor<a class="headerlink" href="#sound-processor" title="Permanent link">&para;</a></h4>
+<p><strong>Sound reproduction</strong> is done by a separate processor, freeing up the CPU to do <strong>other calculations</strong>. It can also contain a bank of <strong>&ldquo;sampled&rdquo; sounds</strong> to reproduce better-quality music/audio.</p>
+<p>Without a sound processor, the CPU is taxed with processing sounds, <strong>slowing down the system</strong> overall. The <strong>overall quality</strong> is not as high as in a system with a dedicated sound processor.</p>
+<h4 id="graphics-processor">Graphics Processor<a class="headerlink" href="#graphics-processor" title="Permanent link">&para;</a></h4>
+<p>A graphics processor does <strong>complex graphic processing</strong> (like 3D rendering).</p>
+<p>If the CPU has to do graphics processing, it will <strong>take longer or be limited</strong>.</p>
+<h4 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h4>
+<p>The cache contains the instruction/data the CPU is <strong>likely to request next</strong> from RAM. It <strong>speeds up processing</strong> as the CPU <strong>does not have to &ldquo;wait&rdquo;</strong> for instructions to arrive from RAM.</p>
+<p>Without the cache, the CPU will have to wait for instructions/data to be fetched from RAM, <strong>slowing down the system</strong>. The user will experience a <strong>&ldquo;sluggish&rdquo; system</strong>.</p>
+<h4 id="network-interface-controller-nic">Network interface controller (NIC)<a class="headerlink" href="#network-interface-controller-nic" title="Permanent link">&para;</a></h4>
+<p>Each network card <strong>connects</strong> to a particular type of <strong>network media</strong> (cable/wireless signal).</p>
+<p>Types of NIC:</p>
+<ul>
+<li>NIC: LAN/ethernet cables</li>
+<li>WNIC (Wireless NIC): WiFi signals</li>
+<li>Bluetooth: Bluetooth signals</li>
+<li>3G radio: cellular signals</li>
+</ul>
+<p>Limited connection types <strong>limit the way</strong> data can be sent or received in a system. <strong>Speed</strong> can also be a factor.</p>
+<h3 id="resources-in-different-computer-systems">Resources in different computer systems<a class="headerlink" href="#resources-in-different-computer-systems" title="Permanent link">&para;</a></h3>
+<h4 id="mainframe">Mainframe<a class="headerlink" href="#mainframe" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: <strong>thousands</strong> of cores</li>
+<li>Primary memory: vast amounts (to support <strong>multiple simultaneous clients</strong>)</li>
+<li>Secondary storage: vast amounts (lots of <strong>backup storage</strong>)</li>
+<li>Common use<ul>
+<li>Large companies</li>
+<li>For weather/financial predictions</li>
+<li>To &ldquo;virtualize&rdquo; smaller computers</li>
+</ul>
+</li>
+<li>Main companies: Cray (HP), IBM</li>
+</ul>
+<h4 id="pcs-desktop">PCs (Desktop)<a class="headerlink" href="#pcs-desktop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: Single processor (multiple cores) 1-4 GHz</li>
+<li>Primary memory: 2-16 GB</li>
+<li>Secondary storage: 256 GB to 2 TB</li>
+<li>Common use<ul>
+<li>Used in companies/schools (where portability is not needed)</li>
+<li>Can be expanded by adding expansion cards (graphics cards)</li>
+<li>Used to be the most common type of personal computer</li>
+</ul>
+</li>
+</ul>
+<h4 id="sub-laptops-netbooks">Sub-laptops (netbooks)<a class="headerlink" href="#sub-laptops-netbooks" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: Single/multiple cores (1-2 GHz)</li>
+<li>Primary memory: 1-2 GB</li>
+<li>Secondary storage: Normally SSD – 16-128 GB</li>
+<li>Common use<ul>
+<li>Fueled by the &lsquo;netbook boom&rsquo; of the early 2000s (before tablets)</li>
+<li>Runs stripped-down OS (Linux, ChromeOS)</li>
+<li>Portability and battery life are key features</li>
+</ul>
+</li>
+</ul>
+<h4 id="cell-phonesmobiles">Cell phones/mobiles<a class="headerlink" href="#cell-phonesmobiles" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: Single/Multicore</li>
+<li>Primary memory: 1-3 GB</li>
+<li>Secondary storage: Usually limited, but can be upgraded (MicroSD card)</li>
+<li>Common use<ul>
+<li>The most common personal computing device in the world</li>
+<li>Getting more capable, rivaling PCs/laptops</li>
+<li>The biggest constraint is screen size and input options (lack of physical keyboard)</li>
+</ul>
+</li>
+</ul>
+<h4 id="tablets">Tablets<a class="headerlink" href="#tablets" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: Single/Multicore</li>
+<li>Primary memory: 1-4 GB</li>
+<li>Secondary storage: Usually limited, but can be upgraded (MicroSD card)</li>
+<li>Common use<ul>
+<li>Very common for media consumption</li>
+<li>Getting more capable, rivaling PCs/laptops</li>
+<li>The biggest constraint is the lack of a physical keyboard</li>
+</ul>
+</li>
+</ul>
+<h4 id="pdas-personal-digital-assistants">PDAs (Personal Digital Assistants)<a class="headerlink" href="#pdas-personal-digital-assistants" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: Single core (&lt;1GHz)</li>
+<li>Primary memory: Limited (&lt;500MB)</li>
+<li>Secondary storage: Limited (&lt;128MB)</li>
+<li>Common use<ul>
+<li>Not used that much anymore</li>
+<li>Used for calendars/emails</li>
+<li>Was overtaken by smartphones and mobiles in the early 2000s</li>
+</ul>
+</li>
+</ul>
+<h4 id="digital-camera">Digital Camera<a class="headerlink" href="#digital-camera" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Processor: Single core</li>
+<li>Primary memory: Limited</li>
+<li>Secondary storage: Expandable through the use of memory cards (SD/Compact flash/Memory Stick)</li>
+<li>Common use<ul>
+<li>For higher-end photography</li>
+<li>Most digital cameras are now integrated into mobile phones/laptops/tablets</li>
+</ul>
+</li>
+</ul>
+<h3 id="limitations-of-resources">Limitations of resources<a class="headerlink" href="#limitations-of-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Primary memory: too little → virtual memory (slower), or else not be able to process instructions</li>
+<li>Secondary storage: too little → not able to store data and for virtual memory</li>
+<li>CPU: too slow → latency, lag, or failure (cascading failure: one process not being able to execute instructions may impact another process)</li>
+<li>Network: limited bandwidth → slow transfer of data (latency/lag)</li>
+<li>Display server: insufficient resources → slow display of graphics (lag), corrupted/failure to display graphics</li>
+<li>Sound server: insufficient resources → slow playback of sound (lag), corrupted/failure to play sound</li>
+</ul>
+<p>IB syllabus examples:</p>
+<ul>
+<li>User time is wasted if primary memory is too small or processor speed inadequate</li>
+<li>Multi-access and multi-programming environments should be considered as well as single-user systems<ul>
+<li>Multi-user system: many users on the same machine/many users connected to the same network</li>
+<li>Multi-programming system: a system that can have different programs (apps) installed (v.s. single programming system - can only run one program/set of programs, e.g. car navigation system)</li>
+</ul>
+</li>
+</ul>
+<h2 id="role-of-the-operating-system">Role of the operating system<a class="headerlink" href="#role-of-the-operating-system" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>6.1.5 Explain the role of the operating system in terms of managing memory, peripherals, and hardware interfaces</li>
+<li>6.1.7 Outline OS resource management techniques: scheduling, policies, multitasking, virtual memory, paging, interrupt, polling</li>
+<li>6.1.8 Discuss the advantages of producing a dedicated operating system for a device</li>
+<li>6.1.9 Outline how an operating system hides the complexity of the hardware from users and applications</li>
+</ul>
+</div>
+<h3 id="functions-of-the-operating-system">Functions of the operating system<a class="headerlink" href="#functions-of-the-operating-system" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">See also</p>
+<p><a href="../../SLHL/03b/#system-software">SL03b OS &amp; Applications § System software</a></p>
+</div>
+<ul>
+<li>Controlling peripheral devices: through drivers (software that allows the OS to communicate with the hardware), allows users to use the peripheral devices through other software</li>
+<li>Managing primary memory: ensure that each process (program) runs in its own allocated memory space to prevent corruption of data/security issues</li>
+<li><a href="#virtual-memory-and-paging">Virtual memory</a>: temporarily transfer pages of data from RAM to disk storage to compensate for shortages of physical memory</li>
+<li>Managing secondary storage: provide folder/directory structure and access methods, including security access</li>
+<li>User interface: provide a way for users to interact with the computer system</li>
+</ul>
+<h3 id="os-resource-management-techniques">OS resource management techniques<a class="headerlink" href="#os-resource-management-techniques" title="Permanent link">&para;</a></h3>
+<h4 id="time-slicingscheduling">Time-slicing/scheduling<a class="headerlink" href="#time-slicingscheduling" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Multi-user system: the set amount of processing time each user gets</li>
+<li>Single-user system: the set amount of processing time each program gets</li>
+<li>Slices/threads are alternately processed to give the illusion of &ldquo;multitasking&rdquo;</li>
+<li>Scheduling: the method used to determine which work gets to use resources next (e.g. processors, network links, expansion cards)<ul>
+<li>Round-robin: each process gets a fixed amount of time to execute (e.g. process A gets 10ms, process B gets 10ms, process C gets 10ms, then back to process A)</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="https://i.imgur.com/1s8gHq3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Time-slicing" src="https://i.imgur.com/1s8gHq3.png" /></a></p>
+<h4 id="interrupt">Interrupt<a class="headerlink" href="#interrupt" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Interrupts: signals sent to the CPU by hardware or software indicating an event that needs immediate attention</li>
+<li>Handled by the interrupt handler (part of the OS) based on the priority of the interrupt</li>
+<li>Upon receiving an interrupt, the OS will suspend the current process, save its state and execute the interrupt handler; after the interrupt handler is finished, the OS will restore the state of the process and resume it</li>
+<li>Can be hardware or software generated (e.g. divide by zero error in a program, or a key press on the keyboard)</li>
+</ul>
+<h4 id="policies">Policies<a class="headerlink" href="#policies" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Policies: rules that determine what needs to be done when a certain event occurs</li>
+<li>Mechanisms: rules that specify how to do something</li>
+<li>e.g. the timer construct that limits the amount of time a process can run is a mechanism; the amount of time that each process gets is a (user) policy</li>
+</ul>
+<h4 id="multitasking">Multitasking<a class="headerlink" href="#multitasking" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Multitasking: the ability of an OS to execute more than one process at the same time</li>
+<li>The OS keeps track of all the processes that are running and allocates CPU time to each process</li>
+</ul>
+<h4 id="virtual-memory-and-paging">Virtual memory and paging<a class="headerlink" href="#virtual-memory-and-paging" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Virtual memory: a feature of the OS that allows a computer to compensate for shortages of physical memory by temporarily transferring pages of data from RAM to disk storage</li>
+<li>Paging/swapping: the process of transferring pages of data from RAM to disk storage and back</li>
+<li>Pagefile/swap file: the temporary storage space on the hard disk that stores the pages of data</li>
+<li>Memory Management Unit (MMU): the hardware that manages the paging process</li>
+<li>Algorithms used by the MMU to determine which pages to swap out:<ul>
+<li>Least recently used (LRU): the page that has not been used for the longest time</li>
+<li>First in first out (FIFO): the page that has been in memory for the longest time</li>
+<li>Least frequently used (LFU): the page that has been used the least number of times</li>
+<li>Random: a random page is selected</li>
+</ul>
+</li>
+<li>Advantage: allows more applications to run than there is available physical memory by the use of page/swap files/part of hard disk as primary memory; larger application can run with less real RAM</li>
+<li>Disadvantage: applications run more slowly and it takes more time to switch between applications, as it uses hard drive memory as primary memory; when a computer&rsquo;s virtual memory resources are overused, programs lock-up/do not run/disk thrashing occurs; reduce the amount of hard drive space available for storage</li>
+</ul>
+<h4 id="polling">Polling<a class="headerlink" href="#polling" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Polling: the process where the computer or controlling device waits for an external device to check for its readiness or state, often with low-level hardware (e.g. when a printer is connected via a parallel port,
+the computer waits until the printer has received the next
+character)</li>
+<li>Alternatives to polling: interrupts (signals generated by devices or processes to indicate that they need attention)</li>
+<li>Polling v.s. interrupt (advantages and disadvantages)<ul>
+<li>Polling<ul>
+<li>Advantages<ul>
+<li>Simple to implement</li>
+<li>No need for additional hardware</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Wastes CPU time</li>
+<li>Can miss events if the polling interval is too long</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Interrupt<ul>
+<li>Advantages<ul>
+<li>Does not waste CPU time</li>
+<li>Does not miss events</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Requires additional hardware</li>
+<li>More complex to implement</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dedicated-os">Dedicated OS<a class="headerlink" href="#dedicated-os" title="Permanent link">&para;</a></h3>
+<p>Examples of dedicated OS:</p>
+<ul>
+<li>iOS/macOS/iPadOS for Apple products only</li>
+<li>Embedded OS: OS that is built into the device (e.g. car navigation system, smart TV)</li>
+<li>Real-time OS: OS that is designed to process data as it comes in (e.g. air traffic control system, stock market system)</li>
+</ul>
+<p>Advantages of dedicated OS:</p>
+<ul>
+<li><strong>Security</strong>: e.g. banks use dedicated OS to prevent cyber attacks</li>
+<li><strong>Customisability</strong>: can perform a specific function at maximum efficiency</li>
+<li><strong>Modify priorities</strong>: can eliminate unnecessary features to reduce OS size and resource usage</li>
+</ul>
+<h3 id="hiding-complexity">Hiding complexity<a class="headerlink" href="#hiding-complexity" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Abstraction</strong> of the OS hides the complexity of the <strong>hardware</strong> from users and applications</li>
+<li>Different hardware media can appear <strong>the same</strong> to the user (e.g. USB flash drive, external hard drive, SD card, CD/DVD)</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><strong>Drive letter</strong>: a letter assigned to a storage device by the OS (e.g. C: drive, D: drive)</li>
+<li><strong>Virtual memory</strong>: the user sees a section of the hard disk as if it were RAM, and the OS manages the paging process</li>
+<li><strong>Input devices</strong>: the OS takes care of the low-level details of the peripheral devices (e.g. keyboard, mouse, touchpad, touchscreen, microphone, camera, etc.)</li>
+<li><strong>Java Virtual Machine (JVM)</strong>: a virtual machine that allows Java programs to run on any platform by interpreting the Java <strong>bytecode</strong> for a particular <strong>hardware platform</strong></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02 Control Systems">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                02 Control Systems
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03/" class="md-footer__link md-footer__link--next" aria-label="Next: 03 Abstract Data Structures">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                03 Abstract Data Structures
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../public/js/mathjax.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

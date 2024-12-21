@@ -1,0 +1,1987 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01/">
+      
+      
+        <link rel="next" href="../04/">
+      
+      
+      <link rel="icon" href="../../public/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>02 Control Systems - IB CompSci Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02-control-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IB CompSci Notes" class="md-header__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IB CompSci Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02 Control Systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IB CompSci Notes" class="md-nav__button md-logo" aria-label="IB CompSci Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53m1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5"/></svg>
+
+    </a>
+    IB CompSci Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../SLHL/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SLHL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SLHL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Computational Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/02a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02a Problem-Solving &amp; Java (Main)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/02b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02b Problem-Solving &amp; Java (Project)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/03a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03a User Focus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/03b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03b OS &amp; Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/03c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03c Number Systems &amp; Data Representation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 OOP Intro + Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/05a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05a Searching &amp; Sorting Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/05b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05b Collections vs Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 Computer Organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/07a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07a Systems in Organisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/07b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07b System Design Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../SLHL/08/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    08
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            08
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/08/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.1 Network Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/08/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.2 Data Transmission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SLHL/08/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.3 Wireless Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            HL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 Problem-Solving &amp; Data Structures 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    02 Control Systems
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    02 Control Systems
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transducer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogue-to-digital-converter-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analogue-to-digital converter (ADC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microprocessor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-to-analogue-converter-dac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital-to-analogue converter (DAC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits and limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefits and limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-and-ethical-impacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Social and ethical impacts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Social and ethical impacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tagging-prisoners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tagging prisoners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surveillance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surveillance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#economic-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Economic impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmental-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environmental impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legal-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legal impact
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centralised-and-distributed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Centralised and distributed systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-and-closed-loop-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open- and closed-loop systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open- and closed-loop systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-loop-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-loop system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-loop-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closed-loop system
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autonomous-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autonomous agent
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            03
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.1 Recursive Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.2 ADT Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.3 ADT Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.4 ADT Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03.5 ADT Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transducer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analogue-to-digital-converter-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analogue-to-digital converter (ADC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microprocessor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-to-analogue-converter-dac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital-to-analogue converter (DAC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits and limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefits and limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-and-ethical-impacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Social and ethical impacts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Social and ethical impacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tagging-prisoners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tagging prisoners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surveillance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surveillance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#economic-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Economic impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmental-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environmental impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legal-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legal impact
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centralised-and-distributed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Centralised and distributed systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-and-closed-loop-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open- and closed-loop systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open- and closed-loop systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-loop-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-loop system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-loop-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closed-loop system
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autonomous-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autonomous agent
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="02-control-systems">02 Control Systems<a class="headerlink" href="#02-control-systems" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Syllabus points</p>
+<ul>
+<li>6.1.7 Outline OS resource management techniques: &hellip; interrupt, polling</li>
+<li>7.1.1 Discuss a range of control systems</li>
+<li>7.1.2 Outline the uses of microprocessors and sensor input in control systems</li>
+<li>7.1.3 Evaluate different input devices for the collection of data in specific situations</li>
+<li>7.1.4 Explain the relationship between a sensor, the processor and an output transducer</li>
+<li>7.1.5 Describe the role of feedback in a control system</li>
+<li>7.1.6 Discuss the social impacts and ethical considerations associated with the use of embedded systems</li>
+<li>7.1.7 Compare a centrally controlled system with a distributed system</li>
+<li>7.1.8 Outline the role of autonomous agents acting within a larger system</li>
+</ul>
+</div>
+<h2 id="control-system">Control system<a class="headerlink" href="#control-system" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://i.imgur.com/r1MGZaz.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Computer system diagram" src="https://i.imgur.com/r1MGZaz.jpg" /></a></p>
+<p>A control system is a type of computer system that <strong>manages and directs</strong> other devices or systems.</p>
+<p>Control systems take an input, process this according to the rules of the system and cause an output, often using a motor or other actuator.</p>
+<ol>
+<li>Measurement of the process variable (input)</li>
+<li>Evaluation and comparison with the desired level (processing)</li>
+<li>Control of the required level of the parameter involved (output)</li>
+</ol>
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
+<h3 id="transducer">Transducer<a class="headerlink" href="#transducer" title="Permanent link">&para;</a></h3>
+<p>A transducer is a device that converts signals in one form of energy into another (e.g. microphone - sound waves into electrical signals).</p>
+<ul>
+<li>Input physical, output electrical: sensor (+ ADC)</li>
+<li>Input electrical, output physical: actuator (+ DAC)</li>
+</ul>
+<p>Advantages of transducers: can convert signals into electric form</p>
+<ul>
+<li>Ease of <strong>amplification</strong></li>
+<li>Ease of <strong>integration</strong> and <strong>differentiation</strong></li>
+<li>Ease of <strong>convertibility</strong> from analogue to digital and vice versa</li>
+<li><strong>Remote controllability</strong> and easy <strong>data transmission</strong> capabilities</li>
+<li>Compatibility with <strong>microprocessors</strong> and <strong>computers</strong></li>
+</ul>
+<h3 id="sensor">Sensor<a class="headerlink" href="#sensor" title="Permanent link">&para;</a></h3>
+<p>A sensor is an input device that continuously takes readings of the environment.</p>
+<p>Types of sensors:</p>
+<ul>
+<li>Temperature (thermometer)</li>
+<li>Light</li>
+<li>Infrared</li>
+<li>Sound/voice</li>
+<li>Pressure</li>
+<li>Motion</li>
+<li>Humidity</li>
+<li>pH</li>
+<li>Gas</li>
+<li>Magnetic</li>
+<li>Position</li>
+<li>Proximity</li>
+<li>Touch</li>
+</ul>
+<h3 id="analogue-to-digital-converter-adc">Analogue-to-digital converter (ADC)<a class="headerlink" href="#analogue-to-digital-converter-adc" title="Permanent link">&para;</a></h3>
+<p>An ADC is a device that converts an analogue (continuous) signal into a digital (discrete, binary) signal.</p>
+<ul>
+<li>Collecting data: sampling</li>
+<li>Converting data to e.g. binary: quantisation</li>
+</ul>
+<h3 id="microprocessor">Microprocessor<a class="headerlink" href="#microprocessor" title="Permanent link">&para;</a></h3>
+<p>A microprocessor compares the input converted by the ADC to pre-defined/stored/preset values.</p>
+<h3 id="digital-to-analogue-converter-dac">Digital-to-analogue converter (DAC)<a class="headerlink" href="#digital-to-analogue-converter-dac" title="Permanent link">&para;</a></h3>
+<p>A DAC is a device that converts a digital signal into an analogue signal for an actuator.</p>
+<h3 id="actuator">Actuator<a class="headerlink" href="#actuator" title="Permanent link">&para;</a></h3>
+<p>An actuator is an output device that executes a physical action (e.g. fan, motor, pump, light) (<em>actua</em>lly does something).</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Input (sensors)</th>
+<th>Processing</th>
+<th>Output (actuators)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automatic doors</td>
+<td>Motion sensor, infrared light beam (light sensor), pressure pad</td>
+<td>If it detects something beyond the set parameters - something that isn’t usually there, a signal is sent to open the door</td>
+<td>Door opens (door engines / motors) Motor opens/closes the door.</td>
+</tr>
+<tr>
+<td>Heating systems</td>
+<td>Temperature sensor, timer</td>
+<td>compare temperature input to the preset range.</td>
+<td>Switch on/off heater / refrigeration unit</td>
+</tr>
+<tr>
+<td>Taxi meters</td>
+<td>Timer, odometer, sensor to measure rotation of axle</td>
+<td>Algorithm that converts distance/time to money</td>
+<td>Continuously displays increasing fare on screen</td>
+</tr>
+<tr>
+<td>Elevators</td>
+<td>Motion sensor, pressure sensor,</td>
+<td>Counts holes in lift shaft to calculate where it is. Measures weight inside elevator</td>
+<td>Motor speed varies (slows as you approach required floor) door opens when you reach the floor, alarm goes off if overloaded, doors reopen if something in the way</td>
+</tr>
+<tr>
+<td>Washing machines</td>
+<td>Temperature sensor, pressure sensor, speed sensor, buttons</td>
+<td>Algorithm that measures how long and how much water the machine needs to wash the clothes in</td>
+<td>Timer display, LEDs showing whether the machine is on or not</td>
+</tr>
+<tr>
+<td>Process control</td>
+<td>Pressure sensor, temperature sensor, switch, motion sensor, timer</td>
+<td>Dependent on what is being processed</td>
+<td>Motor, heater, robotic arm</td>
+</tr>
+<tr>
+<td>Device drivers</td>
+<td>No sensor input - data</td>
+<td></td>
+<td>Motor, print head/valve on nozzle, speaker</td>
+</tr>
+<tr>
+<td>Domestic robots</td>
+<td>Pressure sensor, camera, infrared</td>
+<td>Depends on task</td>
+<td>Algorithm that determines how to process the data</td>
+</tr>
+<tr>
+<td>GPS systems</td>
+<td>GPS receiver</td>
+<td>Trilateration</td>
+<td>Display of location as co-ordinates or combined with other software to plot on map</td>
+</tr>
+<tr>
+<td>Traffic lights</td>
+<td>Induction loop in road</td>
+<td>Calculate how long traffic light needs to be on to allow all the cars to get through, combined with timer</td>
+<td>Change in the colour of the lights in preset order…</td>
+</tr>
+</tbody>
+</table>
+<h2 id="benefits-and-limitations">Benefits and limitations<a class="headerlink" href="#benefits-and-limitations" title="Permanent link">&para;</a></h2>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Consistency and accuracy in the positioning of moving parts of an equipment</li>
+<li>The more economic use of existing plants (by saving fuel/and or electrical energy)</li>
+<li>The release of skilled personnel for other productive work</li>
+<li>Reduction of physical effort with consequent reduction of fatigue and boredom</li>
+<li>Improved working conditions</li>
+</ul>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The initial cost is high</li>
+<li>Power fluctuations (causing unpredictable results)</li>
+<li>Lack of skilled personnel to monitor and maintain specialist equipment</li>
+</ul>
+<h3 id="social-and-ethical-impacts">Social and ethical impacts<a class="headerlink" href="#social-and-ethical-impacts" title="Permanent link">&para;</a></h3>
+<p>A social issue is a problem that influences a considerable number of individuals within a <strong>society</strong>.</p>
+<p>An ethical issue is a problem or situation that requires a person or organisation to choose between <strong>alternatives</strong> that must be evaluated as <strong>right/ethical</strong> or <strong>wrong/unethical</strong>.</p>
+<h4 id="tagging-prisoners">Tagging prisoners<a class="headerlink" href="#tagging-prisoners" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Advantages<ul>
+<li>Allows <strong>non-dangerous criminals</strong> to move</li>
+<li>Reduces the <strong>number of people</strong> needed to be <strong>in prison</strong></li>
+<li>Allows for <strong>tracking</strong> at all times</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Loss of <strong>freedom of movement</strong></li>
+<li>Could be <strong>hacked</strong> to track innocent people</li>
+<li>Tracking data could be <strong>sold off to make money</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="surveillance">Surveillance<a class="headerlink" href="#surveillance" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Advantages<ul>
+<li>Allows for <strong>greater security</strong></li>
+<li>Could be used as effective <strong>evidence in court cases</strong></li>
+<li>Allows fewer people to have to <strong>monitor others</strong></li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Loss of <strong>privacy</strong></li>
+<li>Could be <strong>hacked</strong> and used for unintended purposes</li>
+<li>Could be used to <strong>spy</strong> on people (drones)</li>
+</ul>
+</li>
+</ul>
+<h3 id="economic-impact">Economic impact<a class="headerlink" href="#economic-impact" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Improved profitability (reduced cost per unit)</li>
+<li>Improved, skilled workforce (creating an economic hub for other businesses to develop)</li>
+<li>Unfair advantages against less-developed nations</li>
+</ul>
+<h3 id="environmental-impact">Environmental impact<a class="headerlink" href="#environmental-impact" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Need for more raw materials (contributing to climate change)</li>
+<li>Increase in physical digital waste (disposal problems)</li>
+</ul>
+<h3 id="legal-impact">Legal impact<a class="headerlink" href="#legal-impact" title="Permanent link">&para;</a></h3>
+<ul>
+<li>New technology/systems bring new legislation</li>
+<li>Laws in one country may be different to another</li>
+</ul>
+<h2 id="centralised-and-distributed-systems">Centralised and distributed systems<a class="headerlink" href="#centralised-and-distributed-systems" title="Permanent link">&para;</a></h2>
+<p>A centralised system is where all the processing is done in one place. This is often the case with embedded systems. The processing is done by a microprocessor, which is connected to the sensors and actuators.</p>
+<ul>
+<li>Advantages<ul>
+<li><strong>Easier</strong> to administrate</li>
+<li>More <strong>control</strong></li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>If the <strong>main sensor/controller fails</strong>, the whole system fails</li>
+</ul>
+</li>
+</ul>
+<p>A distributed system is where the processing is done in multiple places. This is often the case with networked systems. The processing is done by multiple microprocessors, which are connected to the sensors and actuators.</p>
+<ul>
+<li>Advantages<ul>
+<li>Quicker <strong>access</strong></li>
+<li>Shared <strong>load</strong></li>
+<li>Response more <strong>specific</strong> to the environment</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>More <strong>expensive</strong> to have multiple controllers/sensors</li>
+<li>More <strong>complex</strong> than a centralised system</li>
+</ul>
+</li>
+</ul>
+<h2 id="open-and-closed-loop-systems">Open- and closed-loop systems<a class="headerlink" href="#open-and-closed-loop-systems" title="Permanent link">&para;</a></h2>
+<h3 id="open-loop-system">Open-loop system<a class="headerlink" href="#open-loop-system" title="Permanent link">&para;</a></h3>
+<p>An open-loop system only repeats a task given a set input.</p>
+<pre class="mermaid"><code>graph LR
+A[Input] --&gt; B[Processing] --&gt; C[Output]</code></pre>
+<p>e.g. for a microwave:</p>
+<pre class="mermaid"><code>graph LR
+A[Time period] --&gt; B[Heating] --&gt; C[Temperature of food]</code></pre>
+<p>Sample steps of operation:</p>
+<ul>
+<li>The desired input is set/the start button is pushed</li>
+<li>A <code>&lt;type of sensor&gt;</code> detects <code>&lt;type of input&gt;</code></li>
+<li>The analogue signal is converted to a digital signal</li>
+<li>The processor compares the input to a set value</li>
+<li>If the value is less/greater/outside the set range, the processor sends a signal to the output transducer (<code>&lt;type of actuator&gt;</code>) to increase/decrease the <code>&lt;type of output&gt;</code></li>
+</ul>
+<p>e.g. a washing machine (N19 HP1):</p>
+<ul>
+<li>The start button is pushed</li>
+<li>A water level sensor detects the water level</li>
+<li>The analogue signal is converted to a digital signal</li>
+<li>The processor compares the input to a set value</li>
+<li>If the value reaches the set value, the processor sends a signal to the output transducer (water valve) to stop the water supply</li>
+</ul>
+<h3 id="closed-loop-system">Closed-loop system<a class="headerlink" href="#closed-loop-system" title="Permanent link">&para;</a></h3>
+<p>A closed-loop system can take into account the output of the system and adjust the input accordingly.</p>
+<pre class="mermaid"><code>graph LR
+A[Desired output/setpoint/reference] --&gt; B[Error] --&gt; C[Controller] --&gt; D[Actuator] --&gt; E[Plant] --&gt; F[Output] &amp; G[Sensor]
+G --&gt; B</code></pre>
+<p>The target is to minimise the error (difference between the desired output and the actual output).</p>
+<ul>
+<li>Disturbance: unwanted variation in the system (e.g. from the environment - icy roads in a car)</li>
+<li>Noise: measurement error from the technology used in the sensor</li>
+</ul>
+<p>Sample steps of operation:</p>
+<ul>
+<li>The desired input is set</li>
+<li>A <code>&lt;type of sensor&gt;</code> detects <code>&lt;type of output&gt;</code></li>
+<li>The analogue signal is converted to a digital signal</li>
+<li>And sent back to the processor</li>
+<li>The error/difference between the desired input and the actual output is calculated</li>
+<li>The difference is compared to a set value to determine if the <code>&lt;type of output&gt;</code> needs to be adjusted</li>
+<li>If the output should be adjusted by an amount dependent upon the error, the processor sends a signal to the output transducer (<code>&lt;type of actuator&gt;</code>) to increase/decrease the <code>&lt;type of output&gt;</code></li>
+<li>The above process is repeated continually</li>
+</ul>
+<p>e.g. a speed controller in a motor (M17 HP1):</p>
+<ul>
+<li>The desired speed is set</li>
+<li>A speed sensor detects the speed of the motor</li>
+<li>The analogue signal is converted to a digital signal</li>
+<li>And sent back to the processor</li>
+<li>The error/difference between the desired speed and the actual speed is calculated</li>
+<li>The difference is compared to a set value to determine if the speed of the motor needs to be adjusted</li>
+<li>If the output should be adjusted by an amount dependent upon the error, the processor sends a signal to the output transducer (motor) to increase/decrease the speed of the motor</li>
+<li>The above process is repeated continually</li>
+</ul>
+<h2 id="autonomous-agent">Autonomous agent<a class="headerlink" href="#autonomous-agent" title="Permanent link">&para;</a></h2>
+<p>An autonomous agent is a softer entity that can carry out tasks on behalf of a user with some degree of independence/autonomy by employing some knowledge or representation of the user&rsquo;s goals or desires.</p>
+<p>Features of an autonomous agent:</p>
+<ul>
+<li><strong>Autonomy</strong>: the ability to activate itself and select actions without direct human intervention</li>
+<li><strong>Reactive behaviour</strong>: the ability to respond to changes in the environment</li>
+<li><strong>Concurrency/sociality</strong>: the ability to interact with other agents through communication (coordination, cooperation, competition)</li>
+<li><strong>Persistence</strong>: the ability to run continuously and not on demand</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 01 Problem-Solving &amp;amp; Data Structures 1">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                01 Problem-Solving &amp; Data Structures 1
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04/" class="md-footer__link md-footer__link--next" aria-label="Next: 04 Resource Management">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                04 Resource Management
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Favicon by <a href="https://www.vecteezy.com/free-vector/icons" target="blank" rel="noreferrer">Vecteezy</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../public/js/mathjax.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
